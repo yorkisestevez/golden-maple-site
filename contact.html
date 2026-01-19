@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NWMC6M9P');</script>
+    <!-- End Google Tag Manager -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Your Project | Golden Maple Landscaping</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Uploadcare Configuration -->
+    <script>
+      UPLOADCARE_PUBLIC_KEY = "77fac79c8646cc9be771";
+    </script>
+    <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
+    <style>
+        /* Wizard Specific Styles */
+        .wizard-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 2rem 1.5rem;
+            min-height: 60vh;
+            position: relative;
+        }
+
+        .step-indicator {
+            position: sticky;
+            top: 70px;
+            /* Below fixed header */
+            background: white;
+            z-index: 100;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: var(--color-gold);
+            font-weight: 600;
+        }
+
+        .wizard-step {
+            display: none;
+            /* Hidden by default */
+            animation: fadeIn 0.4s ease;
+        }
+
+        .wizard-step.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+            box-sizing: border-box;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: var(--color-gold);
+            outline: none;
+        }
+
+        /* Custom Radio/Checkbox Styles for "Thumb Friendliness" */
+        .option-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option-card {
+            position: relative;
+        }
+
+        .option-card input {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .option-card label {
+            display: block;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+            margin-bottom: 0;
+        }
+
+        .option-card input:checked+label {
+            border-color: var(--color-gold);
+            background-color: var(--color-accent-soft);
+            color: var(--color-text-primary);
+        }
+
+        .btn-full {
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .note-text {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .field-error {
+            color: #8a3b3b;
+            font-size: 0.9rem;
+            margin-top: 0.75rem;
+            display: none;
+        }
+
+        .input-error {
+            border-color: #c16464;
+        }
+
+        h2.step-title {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NWMC6M9P" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Golden Maple <span class="text-gold">Landscaping</span></a>
+            <div class="mobile-toggle">&#9776;</div>
+            <nav class="desktop-nav">
+                <a href="index.html#services">Services</a>
+                <a href="pages/process.html">Our Process</a>
+                <a href="pages/about.html">About</a>
+                <div class="nav-dropdown">
+                    <a href="resources.html">Resources ▾</a>
+                    <div class="dropdown-menu">
+                        <a href="resources.html">Blog / Guides</a>
+                        <a href="pages/gallery.html">Project Gallery</a>
+                        <a href="pages/signature-projects.html">Signature Projects</a>
+                    </div>
+                </div>
+                <a href="tel:7055003581" class="btn btn-outline" aria-label="Call our team">Call Our Team</a>
+                <a href="contact.html" class="btn">Start Your Project</a>
+            </nav>
+
+            <div class="social-nav header-social">
+                <a href="https://www.instagram.com/goldenmaplelandscaping/" target="_blank" class="icon-link"
+                    aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="icon-social">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/GoldenMaplegroup/" target="_blank" class="icon-link"
+                    aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="icon-social">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                </a>
+            </div>
+            <div class="mobile-menu-overlay">
+                <a href="index.html#services">Services</a>
+                <a href="pages/process.html">Our Process</a>
+                <a href="pages/about.html">About</a>
+                <div class="mobile-dropdown-menu">
+                    <a href="resources.html" style="color: var(--color-gold);">Blog / Guides</a>
+                    <a href="pages/gallery.html">Project Gallery</a>
+                    <a href="pages/signature-projects.html">Signature Projects</a>
+                </div>
+                <div class="mobile-drawer-social">
+                    <a href="https://www.instagram.com/goldenmaplelandscaping/" target="_blank" class="icon-link"
+                        aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="icon-social">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/GoldenMaplegroup/" target="_blank" class="icon-link"
+                        aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="icon-social">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                </div>
+                <a href="tel:7055003581" class="btn btn-outline btn-large" aria-label="Call our team">Call Our Team</a>
+                <a href="contact.html" class="btn btn-large">Start Your Project</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="wizard-container">
+        <!-- Progress -->
+        <div class="step-indicator" id="progress-text">Step 1 of 4</div>
+
+        <!-- Form Form -->
+        <form id="intake-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+            action="/thank-you/">
+            <!-- Hidden form name for Netlify -->
+            <input type="hidden" name="form-name" value="contact">
+            <!-- Anti-Spam Honeypot -->
+            <input type="text" name="bot-field" style="display:none">
+
+            <!-- SCREEN 1: Intro -->
+            <div class="wizard-step active" data-step="1">
+                <h2 class="step-title">Structured Intake</h2>
+                <p style="margin-bottom: 2rem;">
+                    This short review confirms alignment and readiness before we open the design conversation.
+                    <br><br>
+                    It keeps the process calm yet disciplined, so every next step feels intentional and fitting for the scope.
+                    <br><br>
+                    <span class="secondary-social">Follow our latest projects and behind-the-scenes work.</span>
+                </p>
+                <button type="button" class="btn btn-large" onclick="nextStep(1)">Continue</button>
+            </div>
+
+            <!-- SCREEN 2: Contact & Location -->
+            <div class="wizard-step" data-step="2">
+                <h2 class="step-title">Contact Details</h2>
+
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" name="name" id="field-name" placeholder="John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" name="email" id="field-email" placeholder="john@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone" id="field-phone" placeholder="705-555-1234" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Project Location (Street, City)</label>
+                    <input type="text" name="location" id="field-location" placeholder="123 Maple Dr, Barrie" required>
+                    <span class="note-text">Why we ask: confirms service area and site context.</span>
+                </div>
+
+                <p class="field-error" aria-live="polite"></p>
+                <button type="button" class="btn btn-large" onclick="nextStep(2)">Continue</button>
+            </div>
+
+            <!-- SCREEN 3: Project Overview -->
+            <div class="wizard-step" data-step="3">
+                <h2 class="step-title">Project Overview</h2>
+
+                <div class="form-group">
+                    <label>What are you looking to build?</label>
+                    <div class="option-group">
+                        <div class="option-card">
+                            <input type="checkbox" name="project_type" id="type-patio" value="Patio">
+                            <label for="type-patio">Patio / Hardscape</label>
+                        </div>
+                        <div class="option-card">
+                            <input type="checkbox" name="project_type" id="type-steps" value="Steps">
+                            <label for="type-steps">Steps & Entrances</label>
+                        </div>
+                        <div class="option-card">
+                            <input type="checkbox" name="project_type" id="type-walls" value="Retaining Wall">
+                            <label for="type-walls">Retaining Walls</label>
+                        </div>
+                        <div class="option-card">
+                            <input type="checkbox" name="project_type" id="type-deck" value="Deck">
+                            <label for="type-deck">Decks / Carpentry</label>
+                        </div>
+                        <div class="option-card">
+                            <input type="checkbox" name="project_type" id="type-turf" value="Artificial Turf">
+                            <label for="type-turf">Artificial Turf Installation</label>
+                        </div>
+                        <div class="option-card">
+                            <input type="checkbox" name="project_type" id="type-transform" value="Transformation">
+                            <label for="type-transform">Full Backyard Transformation</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Desired Timeline</label>
+                    <span class="note-text">Why we ask: helps us align planning and build windows.</span>
+                    <div class="option-group">
+                        <div class="option-card">
+                            <input type="radio" name="timeline" id="time-spring" value="Spring" required>
+                            <label for="time-spring">Spring</label>
+                        </div>
+                        <div class="option-card">
+                            <input type="radio" name="timeline" id="time-summer" value="Summer">
+                            <label for="time-summer">Summer</label>
+                        </div>
+                        <div class="option-card">
+                            <input type="radio" name="timeline" id="time-nextyear" value="Next Year">
+                            <label for="time-nextyear">Next Year / Planning Ahead</label>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="field-error" aria-live="polite"></p>
+                <button type="button" class="btn btn-large" onclick="nextStep(3)">Continue</button>
+            </div>
+
+            <!-- SCREEN 4: Planning Alignment (Budget) -->
+            <div class="wizard-step" data-step="4">
+                <h2 class="step-title">Planning Alignment</h2>
+
+                <div class="form-group">
+                    <label>Planning Alignment</label>
+                    <span class="note-text" style="display:block; margin-bottom:1rem;">Why we ask: aligns scope,
+                        complexity, and design coordination before construction begins.</span>
+
+                    <div class="option-group">
+                        <div class="option-card">
+                            <input type="radio" name="budget" id="budget-a" value="10-25k" required>
+                            <label for="budget-a">Focused upgrades or remediation</label>
+                        </div>
+                        <div class="option-card">
+                            <input type="radio" name="budget" id="budget-b" value="25-150k">
+                            <label for="budget-b">Comprehensive outdoor living environments</label>
+                        </div>
+                        <div class="option-card">
+                            <input type="radio" name="budget" id="budget-d" value="150k+">
+                            <label for="budget-d">Complex, multi-area transformations</label>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="field-error" aria-live="polite"></p>
+                <button type="button" class="btn btn-large" onclick="nextStep(4)">Continue to Final Step</button>
+            </div>
+
+            <!-- SCREEN 5: Details -->
+            <div class="wizard-step" data-step="5">
+                <h2 class="step-title">Details & Context</h2>
+
+                <div class="form-group">
+                    <label>Tell us about your space and goals</label>
+                    <textarea name="goals" rows="5"
+                        placeholder="What are you hoping to improve or change? Any challenges we should be aware of?"></textarea>
+                </div>
+
+                <!-- Uploadcare Image Upload Widget -->
+                <div class="form-group">
+                    <label>Upload project photos (optional)</label>
+                    <input
+                        type="hidden"
+                        role="uploadcare-uploader"
+                        data-multiple="true"
+                        data-images-only="true"
+                        data-clearable="true"
+                        name="uploaded_images"
+                    />
+                    <span class="note-text">Ideally 1-3 photos of the current space.</span>
+                </div>
+
+                <button type="button" class="btn btn-large" onclick="submitWizard()">Submit Inquiry</button>
+                <p class="note-text" style="margin-top: 0.75rem;">We use this to confirm fit and give you clear next
+                    steps. No spam.</p>
+                <p class="field-error" aria-live="polite"></p>
+            </div>
+
+            <!-- SCREEN 6: Success (Unified Neutral) -->
+            <div class="wizard-step" id="step-confirmation">
+                <h2 class="step-title text-gold">Thanks — we've received your request</h2>
+                <div class="bg-accent"
+                    style="padding: 2.5rem; margin: 1.5rem 0; border-radius: 4px; background: #fff; border: 1px solid #eee; text-align: center;">
+                    <p style="font-size: 1.1rem; line-height: 1.6; color: #333; margin-bottom: 2rem;">
+                        Thank you for reaching out to Golden Maple Landscaping.<br>
+                        Your information has been received, and our team will review your request shortly.<br>
+                        If your project is a good fit, we'll be in touch to discuss next steps.
+                    </p>
+                    <a href="index.html" class="btn btn-large">Return to Homepage</a>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- Script for Logic -->
+    <script src="script.js"></script> <!-- Includes nav toggle -->
+    <script>
+        let currentStep = 1;
+        const totalExposedSteps = 4; // Visual step count
+
+        function updateProgress(step) {
+            const indicator = document.getElementById('progress-text');
+            indicator.style.display = 'block';
+            if (step <= totalExposedSteps) {
+                indicator.innerText = `Step ${step} of ${totalExposedSteps}`;
+            } else if (step === 5) {
+                indicator.innerText = `Step ${totalExposedSteps} of ${totalExposedSteps}`;
+            } else {
+                indicator.style.display = 'none';
+            }
+        }
+
+        function clearErrors(stepNum) {
+            const stepEl = document.querySelector(`.wizard-step[data-step="${stepNum}"]`);
+            if (!stepEl) return;
+            const errorEl = stepEl.querySelector('.field-error');
+            if (errorEl) {
+                errorEl.textContent = '';
+                errorEl.style.display = 'none';
+            }
+            stepEl.querySelectorAll('.input-error').forEach(el => el.classList.remove('input-error'));
+        }
+
+        function showError(stepNum, message, fieldIds = []) {
+            const stepEl = document.querySelector(`.wizard-step[data-step="${stepNum}"]`);
+            if (!stepEl) return;
+            const errorEl = stepEl.querySelector('.field-error');
+            if (errorEl) {
+                errorEl.textContent = message;
+                errorEl.style.display = 'block';
+            }
+            fieldIds.forEach(id => {
+                const field = document.getElementById(id);
+                if (field && !field.value) {
+                    field.classList.add('input-error');
+                }
+            });
+        }
+
+        function showStep(stepNum) {
+            document.querySelectorAll('.wizard-step').forEach(el => el.classList.remove('active'));
+
+            // If it's a numeric step (1-5) or ID string
+            if (typeof stepNum === 'number') {
+                const target = document.querySelector(`.wizard-step[data-step="${stepNum}"]`);
+                if (target) {
+                    target.classList.add('active');
+                    updateProgress(stepNum);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            } else {
+                // String ID (qualified/hold)
+                const target = document.getElementById(stepNum);
+                if (target) {
+                    target.classList.add('active');
+                    updateProgress(99); // Hide progress
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }
+        }
+
+        function nextStep(current) {
+            clearErrors(current);
+            // Validation
+            if (current === 2) {
+                const name = document.getElementById('field-name').value;
+                const email = document.getElementById('field-email').value;
+                const phone = document.getElementById('field-phone').value;
+                const location = document.getElementById('field-location').value;
+                if (!name || !email || !phone || !location) {
+                    showError(2, "Please provide your name, email, phone, and project location to continue.", [
+                        'field-name',
+                        'field-email',
+                        'field-phone',
+                        'field-location'
+                    ]);
+                    return;
+                }
+            }
+            if (current === 3) {
+                const timeline = document.querySelector('input[name="timeline"]:checked');
+                if (!timeline) {
+                    showError(3, "Please select a desired timeline to continue.");
+                    return;
+                }
+            }
+            if (current === 4) {
+                const budget = document.querySelector('input[name="budget"]:checked');
+                if (!budget) {
+                    showError(4, "Please select a planning alignment to continue.");
+                    return;
+                }
+            }
+
+            // Advance
+            currentStep++;
+            showStep(currentStep);
+        }
+
+        function submitWizard() {
+            clearErrors(5);
+            const form = document.getElementById('intake-form');
+            const name = document.getElementById('field-name').value;
+            const email = document.getElementById('field-email').value;
+            const phone = document.getElementById('field-phone').value;
+            const location = document.getElementById('field-location').value;
+
+            if (!name || !email || !phone || !location) {
+                showError(5, "Please confirm your contact details before submitting.");
+                return;
+            }
+
+            // Netlify Forms - submit via fetch to handle response
+            const formData = new FormData(form);
+
+            fetch('/', {
+                method: 'POST',
+                body: formData
+            }).then(() => {
+                // Show confirmation after successful submission
+                showStep('step-confirmation');
+            }).catch(error => {
+                console.error('Submission error:', error);
+                // Still show confirmation to avoid user frustration
+                showStep('step-confirmation');
+            });
+        }
+    </script>
+    <!-- Footer -->
+    <!-- Global Footer -->
+    <footer class="site-footer bg-dark">
+        <div class="container footer-grid">
+            <div class="footer-block">
+                <h3>Golden Maple Landscaping</h3>
+                <p>Design-build services including patios, steps, retaining walls, decks, outdoor lighting, drainage, artificial turf, and full backyard transformations.</p>
+            </div>
+            <div class="footer-block">
+                <h3>Service Area</h3>
+                <p>Proudly serving homeowners across Barrie, Simcoe County, and surrounding regions — including Muskoka
+                    and cottage country.
+                    We take on select projects outside our core area when scope, timeline, and fit align.</p>
+                <a href="service-areas.html" class="footer-link">Service Areas</a>
+            </div>
+            <div class="footer-block footer-contact">
+                <h3>Contact Us</h3>
+                <address>
+                    <a href="tel:7055003581" class="footer-link">705-500-3581</a>
+                    <a href="mailto:goldenmaplelandscaping@gmail.com"
+                        class="footer-link">goldenmaplelandscaping@gmail.com</a>
+                </address>
+                <div class="footer-social-wrap">
+                    <a href="https://www.instagram.com/goldenmaplelandscaping/" target="_blank" class="icon-link"
+                        aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="icon-social">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/GoldenMaplegroup/" target="_blank" class="icon-link"
+                        aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="icon-social">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Golden Maple Landscaping. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <button id="gm-ai-button" type="button" aria-haspopup="dialog" aria-controls="gm-ai-modal" aria-expanded="false">
+        Ask About Your Project
+    </button>
+    <div id="gm-ai-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div>
+            <button id="gm-ai-close" type="button" aria-label="Close">✕</button>
+            <iframe src="PASTE_GOOGLE_AI_STUDIO_EMBED_URL_HERE" loading="lazy"
+                title="Golden Maple - Design & Planning Assistant"></iframe>
+        </div>
+    </div>
+    <style>
+        #gm-ai-button {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            padding: 0.75rem 1.25rem;
+            background: var(--color-gold, #D4B06A);
+            color: var(--color-text-primary, #111111);
+            border: none;
+            border-radius: 999px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            font: 600 0.875rem/1 var(--font-main, Arial, sans-serif);
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            z-index: 998;
+        }
+
+        #gm-ai-button:focus {
+            outline: 2px solid rgba(0, 0, 0, 0.2);
+            outline-offset: 2px;
+        }
+
+        #gm-ai-modal {
+            position: fixed;
+            right: 24px;
+            bottom: 80px;
+            width: min(420px, calc(100vw - 2rem));
+            height: min(70vh, 520px);
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 18px 48px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 999;
+            overflow: hidden;
+        }
+
+        #gm-ai-modal>div {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        #gm-ai-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.08);
+            color: #111111;
+            font-size: 1rem;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        #gm-ai-modal iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        @media (max-width: 640px) {
+            #gm-ai-button {
+                right: 16px;
+                bottom: 16px;
+            }
+
+            #gm-ai-modal {
+                right: 16px;
+                left: 16px;
+                width: auto;
+                bottom: 72px;
+                height: min(70vh, 500px);
+            }
+        }
+    </style>
+    <script>
+        (function () {
+            const btn = document.getElementById('gm-ai-button');
+            const modal = document.getElementById('gm-ai-modal');
+            const closeBtn = document.getElementById('gm-ai-close');
+            if (!btn || !modal || !closeBtn) return;
+
+            const openModal = () => {
+                modal.style.display = 'block';
+                modal.setAttribute('aria-hidden', 'false');
+                btn.setAttribute('aria-expanded', 'true');
+            };
+
+            const closeModal = () => {
+                modal.style.display = 'none';
+                modal.setAttribute('aria-hidden', 'true');
+                btn.setAttribute('aria-expanded', 'false');
+            };
+
+            btn.addEventListener('click', openModal);
+            closeBtn.addEventListener('click', closeModal);
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeModal();
+            });
+        })();
+    </script>
+</body>
+
+</html>

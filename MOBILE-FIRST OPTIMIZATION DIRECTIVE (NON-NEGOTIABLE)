@@ -1,0 +1,427 @@
+CORE PRINCIPLE
+
+The website must be designed mobile-first, then enhanced for desktop — never the other way around.
+
+Assume:
+
+First visit = phone
+
+First impression = mobile
+
+Decision to continue = made in under 5 seconds
+
+If it does not feel calm, clear, and intentional on mobile, it is not acceptable.
+
+MOBILE UX RULES (MANDATORY)
+1. LAYOUT & SPACING
+
+Single-column layouts only on mobile
+
+No side-by-side sections below 1024px
+
+Generous vertical spacing between sections
+
+Tap targets must be large and forgiving
+
+Minimum standards:
+
+Buttons: 44px+ height
+
+Section padding: minimum 24–32px
+
+Line height: 1.4–1.6
+
+2. TYPOGRAPHY
+
+Headlines must never wrap awkwardly
+
+No forced line breaks in headings
+
+Avoid long headlines that become 3–4 lines on mobile
+
+Body text must remain readable without zoom
+
+Mobile font guidance:
+
+Headline base: ~26–32px
+
+Body text: ~16–18px
+
+Labels/helper text: ~14–15px
+
+3. HERO SECTION (CRITICAL)
+
+Hero text must be fully readable without scrolling
+
+Text must never sit over busy image areas
+
+Overlay strength must be adjusted for mobile if needed
+
+CTA must be visible immediately (no scrolling)
+
+Rules:
+
+One headline
+
+One optional subheadline
+
+One CTA only
+
+No secondary buttons on mobile hero
+
+4. IMAGES ON MOBILE
+
+Crop images specifically for mobile (do not rely on auto-resize)
+
+Prioritize center-weighted compositions
+
+Avoid tall images that push content too far down
+
+No image carousels on mobile
+
+Image rules:
+
+Max 1 image above the fold
+
+No stacked images
+
+Lazy-load all below-the-fold images
+
+5. NAVIGATION (MOBILE)
+
+Clean hamburger menu only
+
+Primary CTA (“Start Your Project”) must be visible and tappable
+
+No dropdown-heavy navigation
+
+No phone numbers or clutter in header
+
+Menu order (top to bottom):
+
+Services
+
+Our Process
+
+About
+
+Start Your Project (CTA-styled)
+
+6. FORMS (EXTREMELY IMPORTANT)
+
+Forms must feel effortless on mobile
+
+One field per row
+
+Large input fields
+
+Clear labels above fields (not placeholders only)
+
+Rules:
+
+No multi-column forms on mobile
+
+No dense text near form fields
+
+Budget/timeline selections must be thumb-friendly
+
+Submit button must span full width
+
+Button text:
+Continue to Next Step
+
+7. SCROLL EXPERIENCE
+
+Content should guide the thumb naturally
+
+No sudden visual jumps
+
+Avoid long unbroken text blocks
+
+Use visual rhythm: text → space → image → space → text
+
+The site should feel:
+
+Calm, paced, and intentional — never crowded.
+
+8. PERFORMANCE & FEEL
+
+Fast load on mobile networks
+
+No heavy animations
+
+No auto-playing video on mobile
+
+Transitions must feel subtle and deliberate
+
+If performance or clarity suffers → remove the effect.
+
+MOBILE QUALITY CHECK (MANDATORY)
+
+Before finalizing any page, answer YES to all:
+
+Can this page be understood in under 10 seconds on a phone?
+
+Is the primary CTA visible without scrolling?
+
+Does nothing feel cramped or rushed?
+
+Would removing one element improve clarity?
+
+If any answer is NO → revise.
+
+FINAL MOBILE DIRECTIVE
+
+Golden Maple Landscaping must feel considered, professional, and trustworthy on mobile — not compressed, not salesy, not busy.
+
+Mobile is not a smaller desktop.
+It is the primary experience.
+
+Proceed accordingly.
+
+MOBILE FORM FLOW WIREFRAME
+
+Golden Maple Landscaping — Structured Intake (Mobile-First)
+
+OVERALL FLOW PRINCIPLES
+
+One column only
+
+One cognitive task per screen
+
+Clear progress feedback
+
+Thumb-friendly spacing
+
+No intimidation, no pricing talk upfront
+
+Qualification happens quietly through sequence
+
+ENTRY POINT (FROM CTA)
+
+Button tapped:
+👉 Start Your Project
+
+Transition:
+→ Smooth slide or fade
+→ New page (not modal)
+
+SCREEN 1 — INTRO / EXPECTATION SETTING
+
+Purpose: Calm the user, explain why this isn’t a generic contact form.
+
+Layout:
+
+Small section header
+
+Short paragraph
+
+Progress indicator
+
+Content:
+
+Heading:
+Structured Intake
+
+Body (2–3 lines max):
+We use a short intake to understand your space, goals, and timeline before planning next steps.
+
+This helps ensure clarity and a smooth experience from the start.
+
+Progress:
+Step 1 of 4
+
+Button:
+Continue
+
+SCREEN 2 — CONTACT & LOCATION
+
+Purpose: Establish legitimacy and context early.
+
+Layout:
+Each field stacked, full width.
+
+Fields:
+
+Full Name
+
+Email Address
+
+Project Location
+(Street, City)
+
+Helper text (below location field, small):
+Helps us understand site conditions and context.
+
+Progress:
+Step 2 of 4
+
+Button:
+Continue
+
+SCREEN 3 — PROJECT OVERVIEW
+
+Purpose: Understand intent and seriousness without money talk yet.
+
+Fields:
+
+1. What are you looking to build?
+(Select one or more — checkboxes)
+
+Patio
+
+Steps
+
+Retaining Wall
+
+Deck
+
+Outdoor Lighting
+
+Drainage
+
+Full Backyard Transformation
+
+2. Desired Timeline
+(Radio buttons)
+
+Spring
+
+Summer
+
+Fall
+
+Next Year
+
+Not Sure Yet
+
+Progress:
+Step 3 of 4
+
+Button:
+Continue
+
+SCREEN 4 — PLANNING ALIGNMENT (QUIET QUALIFICATION)
+
+Purpose: Budget alignment without fear or confrontation.
+
+Field:
+
+Planning Investment Range
+(Radio buttons, thumb-friendly)
+
+Option A
+
+Option B
+
+Option C
+
+Option D
+
+(Labels handled internally — no explanations here)
+
+Helper text (small, muted):
+This helps us align scope and planning approach early.
+
+Progress:
+Step 4 of 4
+
+Button:
+Continue to Final Step
+
+SCREEN 5 — DETAILS & CONTEXT
+
+Purpose: Confirm seriousness and gather qualitative insight.
+
+Fields:
+
+1. Tell us about your space and goals
+(Textarea)
+Placeholder:
+What are you hoping to improve or change? Any challenges we should be aware of?
+
+2. Upload Photos
+(Required)
+
+Upload 3–6 photos
+
+Large upload button
+
+Clear success state (“3 photos added”)
+
+Optional:
+Any access considerations? (short textarea)
+
+Button (Primary):
+Continue to Next Step
+
+SCREEN 6 — SUBMISSION CONFIRMATION (PRE-ROUTING)
+
+Purpose: Reassure + set expectation.
+
+Content:
+
+Heading:
+Thanks — we’ve received your details.
+
+Body:
+We’ll review your information to determine alignment and next steps.
+
+If it’s a good fit, you’ll be invited to a brief Design Fit Call to confirm scope, timing, and priorities.
+
+No buttons yet.
+
+SCREEN 7A — QUALIFIED PATH (INTERNAL LOGIC)
+
+(Shown only if alignment criteria is met)
+
+Heading:
+Next Step: Design Fit Call
+
+Body:
+This short call helps confirm direction before planning begins.
+
+Primary Button:
+Book a Design Fit Call
+(Calendly opens)
+
+SCREEN 7B — HOLD / WAITLIST PATH (INTERNAL LOGIC)
+
+(Shown if alignment is not yet strong)
+
+Heading:
+Thanks for Reaching Out
+
+Body:
+Based on the details provided, we’re not the best fit at this time.
+
+If your plans evolve or your project scope changes, we’d be happy to revisit.
+
+Secondary Button:
+Learn About Our Process
+
+(No scheduling, no rejection language.)
+
+MOBILE UX SAFEGUARDS (MANDATORY)
+
+Sticky progress indicator at top
+
+Sticky “Continue” button on long screens
+
+Keyboard-aware spacing (no fields hidden)
+
+Autofocus next field
+
+Clear error states (one at a time)
+
+FINAL MOBILE TEST (PASS / FAIL)
+
+The flow is correct only if:
+
+Each screen can be completed in under 20 seconds
+
+No screen feels overwhelming
+
+A homeowner can complete the form one-handed
+
+Nothing feels like a “sales funnel”

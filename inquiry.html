@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NWMC6M9P');</script>
+    <!-- End Google Tag Manager -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Inquiry | Golden Maple Landscaping</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .qualification-message {
+            margin-top: 2rem;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-color);
+            background: var(--surface-color);
+        }
+
+        .reject-message {
+            border-left-color: #666;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NWMC6M9P" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Golden Maple <span class="text-gold">Landscaping</span></a>
+
+            <div class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</div>
+
+            <nav class="desktop-nav">
+                <a href="index.html#services">Services</a>
+                <a href="pages/process.html">Our Process</a>
+                <a href="pages/about.html">About</a>
+                <div class="nav-dropdown">
+                    <a href="resources.html">Resources ▾</a>
+                    <div class="dropdown-menu">
+                        <a href="resources.html">Blog / Guides</a>
+                        <a href="pages/gallery.html">Project Gallery</a>
+                        <a href="pages/signature-projects.html">Signature Projects</a>
+                    </div>
+                </div>
+                <a href="tel:7055003581" class="btn btn-outline" aria-label="Call our team">Call Our Team</a>
+                <a href="contact.html" class="btn">Start Your Project</a>
+            </nav>
+
+            <div class="mobile-menu-overlay">
+                <a href="index.html#services"
+                    onclick="document.querySelector('.mobile-menu-overlay').classList.remove('active')">Services</a>
+                <a href="pages/process.html">Our Process</a>
+                <a href="pages/about.html">About</a>
+                <div class="mobile-dropdown-menu">
+                    <a href="resources.html" style="color: var(--color-gold);">Blog / Guides</a>
+                    <a href="pages/gallery.html">Project Gallery</a>
+                    <a href="pages/signature-projects.html">Signature Projects</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section bg-dark">
+            <div class="container">
+                <h1 class="text-white">Project Inquiry</h1>
+                <p class="text-white" style="max-width: 600px; opacity: 0.9;">
+                    Tell us about your outdoor vision. Our team will review your details to ensure a perfect fit for our
+                    design-build expertise.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container" style="max-width: 800px;">
+                <form id="project-form" action="https://formspree.io/f/mqaejrzb" method="POST">
+                    <!-- Anti-Spam Honeypot -->
+                    <input type="text" name="_gotcha" style="display:none">
+
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your Full Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="(705) 555-5555">
+                    </div>
+
+                    <div style="margin: 3rem 0; border-top: 1px solid #eee; padding-top: 2rem;">
+                        <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem;">Project Details</h3>
+
+                        <div class="form-group">
+                            <label for="project-type">Primary Goal</label>
+                            <select id="project-type" name="project-type" required>
+                                <option value="" disabled selected>Select Description...</option>
+                                <option value="full-backyard">Full Backyard Transformation</option>
+                                <option value="patios-walls">Patios & Retaining Walls</option>
+                                <option value="decks-structures">Decks & Custom Structures</option>
+                                <option value="artificial-turf">Artificial Turf Installation</option>
+                                <option value="front-entry">Front Entry & Steps</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">Planned Investment Range</label>
+                            <p style="font-size: 0.85rem; margin-bottom: 0.5rem; color: #666;">This helps us align our
+                                design strategies with your targets.</p>
+                            <select id="budget" name="budget" required>
+                                <option value="" disabled selected>Select Range...</option>
+                                <option value="10k-25k">$10,000 - $25,000</option>
+                                <option value="25k-150k">$25,000 - $150,000+ (Typical)</option>
+                                <option value="150k+">$150,000+</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="timeline">Desired Timeline</label>
+                            <select id="timeline" name="timeline" required>
+                                <option value="" disabled selected>When are you looking to start?</option>
+                                <option value="asap">As soon as possible</option>
+                                <option value="3-6-months">3-6 Months</option>
+                                <option value="6-12-months">6-12 Months</option>
+                                <option value="planning">Just planning / 12+ Months</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Tell us about your space & vision</label>
+                            <textarea id="description" name="description" rows="5" required
+                                placeholder="Describe your current landscape and your goals for the project."></textarea>
+                        </div>
+                    </div>
+
+                    <div id="submit-section">
+                        <button type="submit" class="btn btn-large" style="width: 100%;">Submit Inquiry</button>
+                    </div>
+
+                </form>
+
+                <!-- Unified Neutral Response Area -->
+                <div id="confirmation-message" class="hidden"
+                    style="margin-top: 3rem; padding: 2.5rem; border: 1px solid #eee; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;">
+                    <h2 class="text-gold" style="margin-bottom: 1rem;">Submission Received</h2>
+                    <p style="font-size: 1.05rem; line-height: 1.6; color: #333;">
+                        Thanks for reaching out. We’ve received your details and our team will review them shortly. If
+                        it’s a good fit, we’ll be in touch with next steps.
+                    </p>
+                    <a href="index.html" class="btn" style="margin-top: 2rem;">Return to Homepage</a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="site-footer bg-dark" style="border-top: 1px solid #333;">
+        <div class="container footer-grid">
+            <div class="footer-block">
+                <h3>Golden Maple Landscaping</h3>
+                <p>Design-build services including patios, steps, retaining walls, decks, outdoor lighting, drainage,
+                    artificial turf,
+                    and full backyard transformations.</p>
+            </div>
+            <div class="footer-block">
+                <h3>Service Area</h3>
+                <p>Proudly serving homeowners across Barrie, Simcoe County, and surrounding regions — including Muskoka
+                    and cottage country.
+                    We take on select projects outside our core area when scope, timeline, and fit align.</p>
+                <a href="service-areas.html" class="footer-link">Service Areas</a>
+            </div>
+            <div class="footer-block footer-contact">
+                <h3>Contact Us</h3>
+                <address>
+                    <a href="tel:7055003581" class="footer-link">705-500-3581</a>
+                    <a href="mailto:goldenmaplelandscaping@gmail.com"
+                        class="footer-link">goldenmaplelandscaping@gmail.com</a>
+                </address>
+                <div class="footer-social-wrap">
+                    <a href="https://www.instagram.com/goldenmaplelandscaping/" target="_blank" class="icon-link"
+                        aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="icon-social">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/GoldenMaplegroup/" target="_blank" class="icon-link"
+                        aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="icon-social">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Golden Maple Landscaping. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('project-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const form = this;
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                form.classList.add('hidden');
+                document.getElementById('confirmation-message').classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }).catch(error => {
+                console.error('Submission error:', error);
+                form.classList.add('hidden');
+                document.getElementById('confirmation-message').classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+    <button id="gm-ai-button" type="button" aria-haspopup="dialog" aria-controls="gm-ai-modal" aria-expanded="false">
+        Ask About Your Project
+    </button>
+    <div id="gm-ai-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div>
+            <button id="gm-ai-close" type="button" aria-label="Close">✕</button>
+            <iframe src="PASTE_GOOGLE_AI_STUDIO_EMBED_URL_HERE" loading="lazy"
+                title="Golden Maple - Design & Planning Assistant"></iframe>
+        </div>
+    </div>
+    <style>
+        #gm-ai-button {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            padding: 0.75rem 1.25rem;
+            background: var(--color-gold, #D4B06A);
+            color: var(--color-text-primary, #111111);
+            border: none;
+            border-radius: 999px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            font: 600 0.875rem/1 var(--font-main, Arial, sans-serif);
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            z-index: 998;
+        }
+
+        #gm-ai-button:focus {
+            outline: 2px solid rgba(0, 0, 0, 0.2);
+            outline-offset: 2px;
+        }
+
+        #gm-ai-modal {
+            position: fixed;
+            right: 24px;
+            bottom: 80px;
+            width: min(420px, calc(100vw - 2rem));
+            height: min(70vh, 520px);
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 18px 48px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 999;
+            overflow: hidden;
+        }
+
+        #gm-ai-modal>div {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        #gm-ai-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.08);
+            color: #111111;
+            font-size: 1rem;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        #gm-ai-modal iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        @media (max-width: 640px) {
+            #gm-ai-button {
+                right: 16px;
+                bottom: 16px;
+            }
+
+            #gm-ai-modal {
+                right: 16px;
+                left: 16px;
+                width: auto;
+                bottom: 72px;
+                height: min(70vh, 500px);
+            }
+        }
+    </style>
+    <script>
+        (function () {
+            const btn = document.getElementById('gm-ai-button');
+            const modal = document.getElementById('gm-ai-modal');
+            const closeBtn = document.getElementById('gm-ai-close');
+            if (!btn || !modal || !closeBtn) return;
+
+            const openModal = () => {
+                modal.style.display = 'block';
+                modal.setAttribute('aria-hidden', 'false');
+                btn.setAttribute('aria-expanded', 'true');
+            };
+
+            const closeModal = () => {
+                modal.style.display = 'none';
+                modal.setAttribute('aria-hidden', 'true');
+                btn.setAttribute('aria-expanded', 'false');
+            };
+
+            btn.addEventListener('click', openModal);
+            closeBtn.addEventListener('click', closeModal);
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeModal();
+            });
+        })();
+    </script>
+</body>
+
+</html>
