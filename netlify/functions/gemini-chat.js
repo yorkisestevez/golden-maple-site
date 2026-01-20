@@ -1,5 +1,5 @@
-// VERSION: 1.0.3 — FORCE NETLIFY REBUILD
-// VERSION: 1.0.1 - FORCED REFRESH
+// VERSION: 1.0.5 — SINGLE HANDLER, GEMINI 2.5 FLASH, NETLIFY PROD SAFE
+
 const SYSTEM_PROMPT = `
 You are Golden Maple Landscaping’s Design & Planning Assistant.
 
@@ -16,6 +16,7 @@ Rules:
 `;
 
 exports.handler = async (event) => {
+  // Handle CORS preflight
   if (event.httpMethod === 'OPTIONS') {
     return {
       statusCode: 204,
@@ -23,6 +24,7 @@ exports.handler = async (event) => {
     };
   }
 
+  // Only allow POST
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
@@ -30,6 +32,7 @@ exports.handler = async (event) => {
     };
   }
 
+  // Parse request body
   let payload;
   try {
     payload = JSON.parse(event.body || '{}');
@@ -57,6 +60,7 @@ exports.handler = async (event) => {
     };
   }
 
+  // Read API key from environment
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     return {
@@ -65,32 +69,34 @@ exports.handler = async (event) => {
     };
   }
 
-  const contents = messages.map((message) => ({
-    role: 'user',
-    parts: [{ text: message.content }]
-  }));
+  // Build Gemini contents payload
+  const contents = [
+    {
+      role: 'system',
+      parts: [{ text: SYSTEM_PROMPT }]
+    },
+    ...messages.map((message) => ({
+      role: message.role,
+      parts: [{ text: message.content }]
+    }))
+  ];
 
   try {
     const response = await fetch(
-      'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent',
+      'https://generativeai.googleapis.com/v1/models/gemini-2.5-flash:generateContent',
       {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'x-goog-api-key': apiKey
         },
-        body: JSON.stringify({
-          systemInstruction: {
-            parts: [{ text: SYSTEM_PROMPT }]
-          },
-          contents
-        })
+        body: JSON.stringify({ contents })
       }
     );
 
     if (!response.ok) {
-      const err = await response.text();
-      console.error('Gemini error:', err);
+      const errText = await response.text();
+      console.error('Gemini error:', response.status, errText);
       return {
         statusCode: 502,
         body: JSON.stringify({
@@ -110,11 +116,10 @@ exports.handler = async (event) => {
       body: JSON.stringify({ reply: reply || '' })
     };
   } catch (error) {
-    console.error(error);
+    console.error('Gemini unexpected error:', error?.message);
     return {
       statusCode: 500,
       body: JSON.stringify({ reply: 'Unexpected error.' })
     };
   }
 };
-    
