@@ -1,4 +1,4 @@
-// VERSION: 1.0.3 — Secure API key + Gemini Flash + role mapping fix
+// VERSION: 1.0.3 — FORCE NETLIFY REBUILD
 // VERSION: 1.0.1 - FORCED REFRESH
 const SYSTEM_PROMPT = `
 You are Golden Maple Landscaping’s Design & Planning Assistant.
@@ -61,21 +61,24 @@ exports.handler = async (event) => {
   if (!apiKey) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ reply: 'Service unavailable.' })
+      body: JSON.stringify({ reply: 'Server configuration error.' })
     };
   }
 
   const contents = messages.map((message) => ({
-    role: message.role === 'assistant' ? 'model' : 'user',
+    role: 'user',
     parts: [{ text: message.content }]
   }));
 
   try {
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${encodeURIComponent(apiKey)}`,
+      'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent',
       {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'x-goog-api-key': apiKey
+        },
         body: JSON.stringify({
           systemInstruction: {
             parts: [{ text: SYSTEM_PROMPT }]
@@ -90,7 +93,9 @@ exports.handler = async (event) => {
       console.error('Gemini error:', err);
       return {
         statusCode: 502,
-        body: JSON.stringify({ reply: 'Upstream service error.' })
+        body: JSON.stringify({
+          reply: "Sorry, I couldn't generate a response right now."
+        })
       };
     }
 
