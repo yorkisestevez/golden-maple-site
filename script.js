@@ -176,7 +176,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     const response = await fetch('/.netlify/functions/gemini-chat', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ message: messageText })
+                        body: JSON.stringify({
+                            messages: [
+                                { role: 'user', content: messageText }
+                            ]
+                        })
                     });
 
                     const data = await response.json();
