@@ -32,7 +32,16 @@ exports.handler = async (event) => {
   }
 
   const messages = Array.isArray(payload.messages) ? payload.messages : null;
-  if (!messages || messages.some((item) => typeof item !== 'string')) {
+  if (
+    !messages ||
+    messages.some(
+      (item) =>
+        !item ||
+        typeof item !== 'object' ||
+        typeof item.role !== 'string' ||
+        typeof item.content !== 'string'
+    )
+  ) {
     return {
       statusCode: 400,
       headers: { 'Content-Type': 'application/json' },
@@ -49,9 +58,9 @@ exports.handler = async (event) => {
     };
   }
 
-  const contents = messages.map((text) => ({
-    role: 'user',
-    parts: [{ text }]
+  const contents = messages.map((item) => ({
+    role: item.role,
+    parts: [{ text: item.content }]
   }));
 
   try {
