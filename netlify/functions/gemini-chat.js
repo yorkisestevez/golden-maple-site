@@ -1,3 +1,4 @@
+// VERSION: 1.0.3 — Secure API key + Gemini Flash + role mapping fix
 // VERSION: 1.0.1 - FORCED REFRESH
 const SYSTEM_PROMPT = `
 You are Golden Maple Landscaping’s Design & Planning Assistant.
@@ -46,7 +47,7 @@ exports.handler = async (event) => {
       (item) =>
         !item ||
         typeof item !== 'object' ||
-        item.role !== 'user' ||
+        typeof item.role !== 'string' ||
         typeof item.content !== 'string'
     )
   ) {
@@ -65,13 +66,14 @@ exports.handler = async (event) => {
   }
 
   const contents = messages.map((message) => ({
-    role: 'user',
+    role: message.role === 'assistant' ? 'model' : 'user',
     parts: [{ text: message.content }]
   }));
 
   try {
     const response = await fetch(
-  "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyC8F0MzUqZrxq_IloY1dsHqPXctVsbZD70"
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${encodeURIComponent(apiKey)}`,
+      {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -93,25 +95,21 @@ exports.handler = async (event) => {
     }
 
     const data = await response.json();
+    const parts = data?.candidates?.[0]?.content?.parts;
+    const reply = Array.isArray(parts)
+      ? parts.map((part) => part.text || '').join('').trim()
+      : '';
 
-    const reply =
-      data?.candidates?.[0]?.content?.parts
-        ?.map(p => p.text)
-        ?.join("")
-        ?.trim();
-    
-    if (!reply) {
-      console.error("Gemini returned no text:", JSON.stringify(data));
-      return {
-        statusCode: 500,
-        body: JSON.stringify({
-          error: "Gemini returned no usable text"
-        })
-      };
-    }
-    
     return {
       statusCode: 200,
-      body: JSON.stringify({ reply })
+      body: JSON.stringify({ reply: reply || '' })
     };
+  } catch (error) {
+    console.error(error);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ reply: 'Unexpected error.' })
+    };
+  }
+};
     
