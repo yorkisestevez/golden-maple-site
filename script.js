@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     /*
-     * Floating Chat UI Logic
+     * Floating Chat UI Logic (Mobile chat input fix for iOS/Android)
      */
     const chatWidget = document.getElementById('gm-chat-widget');
     if (chatWidget) {
@@ -139,6 +139,50 @@ document.addEventListener('DOMContentLoaded', function () {
         const chatMessages = document.getElementById('gm-chat-messages');
         const chatInput = document.getElementById('gm-chat-input');
         const chatSend = document.getElementById('gm-chat-send');
+        const chatInputWrapper = document.getElementById('gm-chat-input-wrapper');
+
+        // --- ADD CSS fix at runtime if not present ---
+        if (!document.getElementById('gm-chat-mobile-css')) {
+            const style = document.createElement('style');
+            style.id = 'gm-chat-mobile-css';
+            style.textContent = `
+/* Floating Chat Panel with mobile-friendly height */
+#gm-chat-panel {
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    bottom: 0;
+    top: auto;
+}
+@supports (height: 100dvh) {
+    #gm-chat-panel {
+        height: 100dvh !important;
+        max-height: 100dvh !important;
+    }
+}
+/* Safe-area aware sticky input wrapper */
+#gm-chat-input-wrapper {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: inherit;
+    z-index: 2;
+    padding-bottom: env(safe-area-inset-bottom, 0);
+    margin-bottom: 0;
+}
+@media (max-width: 830px) {
+    #gm-chat-panel {
+        border-radius: 18px 18px 0 0;
+        height: 100dvh !important;
+        max-height: 100dvh !important;
+    }
+    #gm-chat-input-wrapper {
+        box-shadow: 0 -2px 16px rgba(0,0,0,0.05);
+    }
+}
+`;
+            document.head.appendChild(style);
+        }
 
         if (chatToggle && chatPanel && chatMessages && chatInput && chatSend) {
             const setChatOpen = (isOpen) => {
@@ -201,6 +245,25 @@ document.addEventListener('DOMContentLoaded', function () {
                     sendMessage();
                 }
             });
+
+            // --- Mobile input scroll into view fix ---
+            function isMobile() {
+                return /android|ipad|iphone|ipod/i.test(navigator.userAgent) && window.innerWidth < 900;
+            }
+            if (chatInput) {
+                chatInput.addEventListener('focus', function () {
+                    if (isMobile()) {
+                        // Use setTimeout to allow keyboard to open before scroll
+                        setTimeout(() => {
+                            // scroll the input wrapper (to ensure input/button is visible!)
+                            // If the wrapper doesn't exist, fallback to input itself
+                            const el = chatInputWrapper || chatInput;
+                            // Prefer smooth scroll, fallback to instant
+                            el.scrollIntoView({ block: 'end', behavior: 'smooth', inline: 'nearest' });
+                        }, 280);
+                    }
+                });
+            }
         }
     }
 
