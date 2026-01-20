@@ -38,7 +38,7 @@ exports.handler = async (event) => {
       (item) =>
         !item ||
         typeof item !== 'object' ||
-        typeof item.role !== 'string' ||
+        item.role !== 'user' ||
         typeof item.content !== 'string'
     )
   ) {
@@ -59,7 +59,7 @@ exports.handler = async (event) => {
   }
 
   const contents = messages.map((item) => ({
-    role: item.role,
+    role: 'user',
     parts: [{ text: item.content }]
   }));
 
