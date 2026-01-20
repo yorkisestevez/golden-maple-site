@@ -466,6 +466,20 @@
             });
         })();
     </script>
+<div id="gm-chat-widget">
+    <button id="gm-chat-toggle" type="button" aria-expanded="false" aria-controls="gm-chat-panel">
+        Ask About Our Process
+    </button>
+    <div id="gm-chat-panel" role="dialog" aria-modal="false" aria-hidden="true" aria-label="Golden Maple Planning Assistant">
+        <div class="gm-chat-header">Golden Maple Planning Assistant</div>
+        <div id="gm-chat-messages" class="gm-chat-messages" aria-live="polite"></div>
+        <div class="gm-chat-input-row">
+            <input id="gm-chat-input" type="text" placeholder="Ask a question..." autocomplete="off" />
+            <button id="gm-chat-send" type="button">Send</button>
+        </div>
+    </div>
+</div>
 </body>
 
 </html>
+

@@ -129,6 +129,77 @@ document.addEventListener('DOMContentLoaded', function () {
         // but explicit check for aria-expanded update if needed.
     });
 
+    /*
+     * Floating Chat UI Logic
+     */
+    const chatWidget = document.getElementById('gm-chat-widget');
+    if (chatWidget) {
+        const chatToggle = document.getElementById('gm-chat-toggle');
+        const chatPanel = document.getElementById('gm-chat-panel');
+        const chatMessages = document.getElementById('gm-chat-messages');
+        const chatInput = document.getElementById('gm-chat-input');
+        const chatSend = document.getElementById('gm-chat-send');
+
+        if (chatToggle && chatPanel && chatMessages && chatInput && chatSend) {
+            const setChatOpen = (isOpen) => {
+                chatPanel.classList.toggle('is-open', isOpen);
+                chatPanel.setAttribute('aria-hidden', String(!isOpen));
+                chatToggle.setAttribute('aria-expanded', String(isOpen));
+                if (isOpen) {
+                    chatInput.focus();
+                }
+            };
+
+            const appendMessage = (text, type) => {
+                const message = document.createElement('div');
+                message.className = `gm-chat-message gm-chat-message--${type}`;
+                message.textContent = text;
+                chatMessages.appendChild(message);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            };
+
+            chatToggle.addEventListener('click', () => {
+                const isOpen = chatPanel.classList.contains('is-open');
+                setChatOpen(!isOpen);
+            });
+
+            const sendMessage = async () => {
+                const messageText = chatInput.value.trim();
+                if (!messageText) {
+                    return;
+                }
+
+                appendMessage(messageText, 'user');
+                chatInput.value = '';
+
+                try {
+                    const response = await fetch('/.netlify/functions/gemini-chat', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ message: messageText })
+                    });
+
+                    const data = await response.json();
+                    if (data && typeof data.reply === 'string') {
+                        appendMessage(data.reply, 'bot');
+                    } else {
+                        appendMessage('Sorry, I could not generate a response right now.', 'bot');
+                    }
+                } catch (error) {
+                    appendMessage('Sorry, something went wrong. Please try again shortly.', 'bot');
+                }
+            };
+
+            chatSend.addEventListener('click', sendMessage);
+            chatInput.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' && !event.shiftKey) {
+                    event.preventDefault();
+                    sendMessage();
+                }
+            });
+        }
+    }
+
 });
 
 
