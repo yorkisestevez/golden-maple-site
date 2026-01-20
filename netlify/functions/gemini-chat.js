@@ -80,6 +80,7 @@ exports.handler = async (event) => {
         })
       }
     );
+    
 
     if (!response.ok) {
       return {
