@@ -71,8 +71,7 @@ exports.handler = async (event) => {
 
   try {
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=${encodeURIComponent(apiKey)}`,
-      {
+  "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyC8F0MzUqZrxq_IloY1dsHqPXctVsbZD70"
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
