@@ -72,14 +72,15 @@ exports.handler = async (event) => {
   // Build Gemini contents payload
   const contents = [
     {
-      role: 'system',
+      role: 'user',
       parts: [{ text: SYSTEM_PROMPT }]
     },
     ...messages.map((message) => ({
-      role: message.role,
+      role: 'user',
       parts: [{ text: message.content }]
     }))
   ];
+  
 
   try {
     const response = await fetch(
