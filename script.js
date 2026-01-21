@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const send = document.getElementById('gm-chat-send');
   const messages = document.getElementById('gm-chat-messages');
   const ctas = document.querySelectorAll('.ask-about-process');
+  const closeBtn = document.getElementById('gm-chat-close');
 
   if (!panel || !toggle || !input || !send || !messages) return;
 
@@ -35,6 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
       openChat();
     });
   });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      panel.classList.remove('is-open');
+      panel.setAttribute('aria-hidden', 'true');
+    });
+  }
 
   async function sendMessage() {
     const text = input.value.trim();

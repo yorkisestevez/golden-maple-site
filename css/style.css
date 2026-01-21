@@ -1610,6 +1610,42 @@ img {
   margin-right: 20%;
 }
 
+/* Chat message layout */
+.gm-chat-message {
+  max-width: 80%;
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Bot messages */
+.gm-chat-message.bot {
+  background: #f4f4f4;
+  color: #222;
+  align-self: flex-start;
+}
+
+/* User messages */
+.gm-chat-message.user {
+  background: #d6b26e;
+  color: #000;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+#gm-chat-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
 .gm-chat-input-row {
   display: flex;
   gap: 0.5rem;
