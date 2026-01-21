@@ -1,8 +1,86 @@
 /* =========================================================
-   CHATBOT TOGGLE FIX - Production Safe
-   ---------------------------------------------------------
-   Robust open/close toggle for desktop and mobile
+   /* =========================================================
+      CHAT SEND BUTTON FIX - Prevents No-Op on Click/Enter
+      ---------------------------------------------------------
+      Ensures sending works reliably on click and Enter.
+      Appends user message immediately as a visible fallback.
    ========================================================= */
+
+   // These will be safely used in initChat()
+   function handleSend(e) {
+     // Prevent form submit if inside <form>
+     if (e) e.preventDefault();
+
+     // Defensive: get elements each time, in case of DOM changes
+     const chatInput = document.getElementById('gm-chat-input');
+     const chatMessages = document.getElementById('gm-chat-messages');
+     if (!chatInput || !chatMessages) return; // Guards
+
+     const userText = chatInput.value.trim();
+     if (!userText) return; // Exit if empty
+
+     // Create user message element and append immediately (fallback)
+     const userMsgEl = document.createElement('div');
+     userMsgEl.className = 'gm-chat-message gm-from-user';
+     userMsgEl.textContent = userText;
+     chatMessages.appendChild(userMsgEl);
+
+     // Scroll to bottom
+     chatMessages.scrollTop = chatMessages.scrollHeight;
+
+     // Clear input quickly for better UX
+     chatInput.value = '';
+
+     // The API call structure remains untouched, so we simply trigger the handler as before:
+     if (typeof window.gmHandleSendMessage === 'function') {
+       window.gmHandleSendMessage(userText);
+     }
+   }
+
+   // Attach listeners and prevent duplicate handlers only if DOM is ready
+   function wireSendButtonAndInput() {
+     const chatInput = document.getElementById('gm-chat-input');
+     const chatSend = document.getElementById('gm-chat-send');
+     if (!chatInput || !chatSend) return;
+
+     // Defensive: wrap send button inside form if exists
+     const sendForm = chatSend.closest('form');
+     if (sendForm) {
+       sendForm.addEventListener('submit', function(e) {
+         e.preventDefault();
+         handleSend(e);
+       });
+     }
+
+     // Remove any existing listeners to prevent double fires
+     chatSend.removeEventListener('click', handleSend);
+     chatSend.addEventListener('click', handleSend);
+
+     // ENTER key on input triggers send (but not on Shift+Enter/multiline/IME composition)
+     chatInput.removeEventListener('keydown', chatInput._gmSendKeyHandler || (()=>{}));
+     chatInput._gmSendKeyHandler = function(e) {
+       if (
+         e.key === 'Enter' && !e.shiftKey && !e.isComposing &&
+         !e.ctrlKey && !e.altKey && !e.metaKey
+       ) {
+         e.preventDefault();
+         handleSend(e);
+       }
+     };
+     chatInput.addEventListener('keydown', chatInput._gmSendKeyHandler);
+   }
+
+   // Patch the chat initialization to wire up send
+   const _origInitChat = window.initChat;
+   window.initChat = function() {
+     if (typeof _origInitChat === "function") _origInitChat();
+     wireSendButtonAndInput();
+   };
+
+   // If already initialized, wire immediately
+   if (window.gmChatInitialized) {
+     wireSendButtonAndInput();
+   }
 
 (function() {
   'use strict';
