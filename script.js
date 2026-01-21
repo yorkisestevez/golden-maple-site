@@ -1,11 +1,134 @@
 /* =========================================================
-   /* =========================================================
-      CHAT SEND BUTTON FIX - Prevents No-Op on Click/Enter
-      ---------------------------------------------------------
-      Ensures sending works reliably on click and Enter.
-      Appends user message immediately as a visible fallback.
-   ========================================================= */
+   /**
+    * GOLDEN MAPLE CHAT: Core client chat logic.
+    * Ensures reliable rendering, welcome message, sending, and event delegation.
+    */
 
+   // Utility: Get the true chat messages container safely and log fallback errors
+   function getChatMessagesContainer() {
+     const el = document.getElementById('gm-chat-messages');
+     if (!el) {
+       // Fallback error log and visible message for devs
+       console.error('[GM-CHAT] Could not find chat messages container (#gm-chat-messages).');
+       const errDiv = document.createElement('div');
+       errDiv.style.color = 'red';
+       errDiv.style.fontWeight = 'bold';
+       errDiv.textContent = 'Error: Chat not available (missing #gm-chat-messages).';
+       document.body.appendChild(errDiv);
+     }
+     return el;
+   }
+
+   // Append ANY message (bot, user, system) to the correct messages container
+   function appendMessage({ text, from = 'bot', extraClass = '' }) {
+     const chatMessages = getChatMessagesContainer();
+     if (!chatMessages) return;
+
+     const msgEl = document.createElement('div');
+     msgEl.className = 'gm-chat-message ' + (from === 'user' ? 'gm-from-user' : 'gm-from-bot') + (extraClass ? ' ' + extraClass : '');
+     msgEl.textContent = text;
+     chatMessages.appendChild(msgEl);
+     chatMessages.scrollTop = chatMessages.scrollHeight;
+   }
+
+   // Show guaranteed welcome message (only once)
+   function showWelcomeMessageIfNeeded() {
+     const chatMessages = getChatMessagesContainer();
+     if (!chatMessages) return;
+     if (!chatMessages.dataset.gmWelcomeShown) {
+       appendMessage({ text: '👋 Welcome! How can I help you today?', from: 'bot', extraClass: 'gm-welcome' });
+       chatMessages.dataset.gmWelcomeShown = '1';
+     }
+   }
+
+   // Core send function (safely handles user input)
+   function sendMessage(e) {
+     if (e) e.preventDefault();
+
+     const chatInput = document.getElementById('gm-chat-input');
+     const chatMessages = getChatMessagesContainer();
+     if (!chatInput || !chatMessages) {
+       console.warn('[GM-CHAT] Missing input or messages container.');
+       return;
+     }
+
+     const userText = chatInput.value.trim();
+     if (!userText) return;
+
+     // Immediately display user message
+     appendMessage({ text: userText, from: 'user' });
+
+     chatInput.value = '';
+     chatInput.focus();
+
+     if (typeof window.gmHandleSendMessage === 'function') {
+       window.gmHandleSendMessage(userText);
+     }
+   }
+
+   // Setup all chat input UI interactions using event delegation & guards
+   function wireSendButtonAndInput() {
+     const chatInput = document.getElementById('gm-chat-input');
+     const chatSend = document.getElementById('gm-chat-send');
+
+     // Defensive: both input and send button must exist
+     if (!chatInput || !chatSend) {
+       console.warn('[GM-CHAT] Missing #gm-chat-input or #gm-chat-send in DOM.');
+       return;
+     }
+
+     // (5) Prevent form submission reloading page
+     const sendForm = chatSend.closest('form');
+     if (sendForm && !sendForm.dataset.gmSubmitWired) {
+       sendForm.addEventListener('submit', function(e) {
+         e.preventDefault();
+         sendMessage(e);
+       });
+       sendForm.dataset.gmSubmitWired = '1';
+     }
+
+     // (4) Use event delegation via parent for send button click for robustness
+     const parent = chatSend.parentElement || document;
+     if (!parent.dataset.gmDelegated) {
+       parent.addEventListener('click', function(e) {
+         // Allow for dynamic DOM: always query fresh
+         const liveSendBtn = document.getElementById('gm-chat-send');
+         if (
+           (e.target === liveSendBtn) ||
+           (e.target && liveSendBtn && e.target.closest && e.target.closest('#gm-chat-send'))
+         ) {
+           e.preventDefault();
+           sendMessage(e);
+         }
+       });
+       parent.dataset.gmDelegated = '1';
+     }
+
+     // (6) Enter key for sending, but not Shift+Enter
+     if (!chatInput.dataset.gmEnterWired) {
+       chatInput.addEventListener('keydown', function(e) {
+         if (e.key === 'Enter' && !e.shiftKey) {
+           e.preventDefault();
+           sendMessage(e);
+         }
+       });
+       chatInput.dataset.gmEnterWired = '1';
+     }
+   }
+
+   // Guaranteed chat initialization: show welcome and wire up inputs
+   function initChat() {
+     showWelcomeMessageIfNeeded();
+     wireSendButtonAndInput();
+   }
+
+   // Auto-initialize if chat panel is opened. Replace this with 
+   // your existing chat "open" handler as needed:
+   document.addEventListener('DOMContentLoaded', function() {
+     initChat();
+   });
+
+   // If your chat is dynamically opened, call initChat() after opening panel.
    // These will be safely used in initChat()
    function handleSend(e) {
      // Prevent form submit if inside <form>
