@@ -1716,11 +1716,20 @@ a[href*="signature-projects.html"] {
     padding: 12px 14px;
     font-size: 16px;
     line-height: 1.4;
+    width: 100% !important;
   }
 
   .gm-chat-input-row {
-    align-items: center;
+    align-items: stretch !important;
+    flex-direction: column !important;
+    gap: 10px;
     padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  #gm-chat-send {
+    width: 100% !important;
+    min-height: 48px;
+    margin: 0 !important;
   }
 
   #gm-chat-panel.is-open {
