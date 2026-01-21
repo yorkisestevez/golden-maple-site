@@ -1646,6 +1646,11 @@ img {
   color: #333;
 }
 
+/* TEMP: Hide View Signature Projects button site-wide (content preserved) */
+a[href*="signature-projects.html"] {
+  display: none !important;
+}
+
 .gm-chat-input-row {
   display: flex;
   gap: 0.5rem;
