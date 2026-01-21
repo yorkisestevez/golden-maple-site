@@ -1,9 +1,127 @@
-/* =========================================================
-   /**
-    * GOLDEN MAPLE CHAT: Core client chat logic.
-    * Ensures reliable rendering, welcome message, sending, and event delegation.
-    */
+// =========================================================
+// GOLDEN MAPLE CHAT: Minimal, single-controller implementation
 
+(function() {
+  // Element selectors
+  const PANEL_ID = 'gm-chat-panel';
+  const TOGGLE_ID = 'gm-chat-toggle';
+  const INPUT_ID = 'gm-chat-input';
+  const SEND_ID = 'gm-chat-send';
+  const MESSAGES_ID = 'gm-chat-messages';
+  const WELCOME_KEY = 'gm-chat-welcome-shown';
+
+  let chatPanel, chatToggle, chatInput, chatSend, chatMessages;
+  let welcomeShown = false;
+
+  function getElements() {
+    chatPanel    = document.getElementById(PANEL_ID);
+    chatToggle   = document.getElementById(TOGGLE_ID);
+    chatInput    = document.getElementById(INPUT_ID);
+    chatSend     = document.getElementById(SEND_ID);
+    chatMessages = document.getElementById(MESSAGES_ID);
+  }
+
+  function appendMessage({ text, from = 'bot', extraClass = '' }) {
+    if (!chatMessages) return;
+    const msg = document.createElement('div');
+    msg.className = 'gm-chat-message ' +
+      (from === 'user' ? 'gm-from-user' : 'gm-from-bot') +
+      (extraClass ? ' ' + extraClass : '');
+    msg.textContent = text;
+    chatMessages.appendChild(msg);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function showWelcomeMessage() {
+    if (welcomeShown) return;
+    appendMessage({
+      text: '👋 Welcome! How can I help you today?',
+      from: 'bot',
+      extraClass: 'gm-welcome'
+    });
+    welcomeShown = true;
+  }
+
+  function toggleChat() {
+    if (!chatPanel) return;
+    chatPanel.classList.toggle('is-open');
+    if (chatPanel.classList.contains('is-open')) {
+      showWelcomeMessage();
+      setTimeout(() => { chatInput && chatInput.focus(); }, 250);
+    }
+  }
+
+  async function sendMessage() {
+    if (!chatInput || !chatMessages) return;
+    const text = chatInput.value.trim();
+    if (!text) return;
+    // Show user message immediately
+    appendMessage({ text, from: 'user' });
+    chatInput.value = '';
+    chatInput.focus();
+
+    try {
+      // NOTE: Use existing backend endpoint; keep API call unchanged.
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: text })
+      });
+      let botText = '...';
+      if (res.ok) {
+        const data = await res.json();
+        botText = data.reply ? data.reply : 'Sorry, no reply.';
+      } else {
+        botText = 'Sorry, there was a problem. Please try again.';
+      }
+      appendMessage({ text: botText, from: 'bot' });
+    } catch (err) {
+      appendMessage({ text: 'Error: Unable to get reply.', from: 'bot' });
+    }
+  }
+
+  function preventFormSubmission() {
+    if (!chatInput) return;
+    const form = chatInput.closest('form');
+    if (form) {
+      form.addEventListener('submit', function(e) { e.preventDefault(); });
+    }
+  }
+
+  function initChat() {
+    getElements();
+    if (!(chatPanel && chatToggle && chatInput && chatSend && chatMessages)) return;
+
+    // Toggle button
+    chatToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      toggleChat();
+    });
+
+    // Send button
+    chatSend.addEventListener('click', function(e) {
+      e.preventDefault();
+      sendMessage();
+    });
+
+    // Prevent <form> submission if input is in a form
+    preventFormSubmission();
+
+    // Enter (no Shift) sends
+    chatInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initChat);
+  } else {
+    initChat();
+  }
+})();
    // Utility: Get the true chat messages container safely and log fallback errors
    function getChatMessagesContainer() {
      const el = document.getElementById('gm-chat-messages');
