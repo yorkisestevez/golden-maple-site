@@ -1518,7 +1518,7 @@ img {
   position: fixed;
   right: 24px;
   bottom: 24px;
-  z-index: 2000;
+  z-index: 9999;
   font-family: var(--font-main);
 }
 
@@ -1564,6 +1564,7 @@ img {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  z-index: 9999;
 }
 
 #gm-chat-panel.is-open {

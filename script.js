@@ -1,39 +1,48 @@
 /* =========================================================
-   CHAT UI FINAL FIX
-   - Mobile keyboard safe
-   - Desktop + mobile CTA wiring
-   - Button styling match
+   CHATBOT TOGGLE FIX - Production Safe
+   ---------------------------------------------------------
+   Robust open/close toggle for desktop and mobile
    ========================================================= */
 
-// Wire "Ask About Our Process" CTA to the chat toggle
-document.addEventListener('DOMContentLoaded', function () {
-  // Query selectors for possible CTA(s)
-  const askCtas = Array.from(document.querySelectorAll('.ask-about-process, #ask-about-process'));
-  const chatToggle = document.getElementById('gm-chat-toggle');
+(function() {
+  'use strict';
+  
+  // Prevent duplicate initialization
+  if (window.gmChatInitialized) return;
+  window.gmChatInitialized = true;
 
-  if (chatToggle && askCtas.length) {
-    askCtas.forEach(function (cta) {
-      cta.addEventListener('click', function (e) {
-        if (cta.tagName.toLowerCase() === 'a') {
-          e.preventDefault();
-        }
-        // Programmatically trigger chat toggle click
-        chatToggle.click();
-      });
-    });
-  }
-});
-   document.addEventListener('DOMContentLoaded', function () {
+  function initChat() {
+    /* -------------------------------------------------------
+       CHAT ELEMENTS - Safe Query
+    ------------------------------------------------------- */
+    const chatPanel = document.getElementById('gm-chat-panel');
+    const chatInput = document.getElementById('gm-chat-input');
+    const chatMessages = document.getElementById('gm-chat-messages');
+    const chatToggle = document.getElementById('gm-chat-toggle');
+  
+    // Exit gracefully if elements missing
+    if (!chatPanel || !chatInput || !chatMessages || !chatToggle) {
+      return;
+    }
 
     /* -------------------------------------------------------
-       CHAT ELEMENTS
+       Z-INDEX HARDENING - Ensure visibility above all content
     ------------------------------------------------------- */
-    const chatPanel   = document.getElementById('gm-chat-panel');
-    const chatInput   = document.getElementById('gm-chat-input');
-    const chatMessages = document.getElementById('gm-chat-messages');
-    const chatToggle  = document.getElementById('gm-chat-toggle');
-  
-    if (!chatPanel || !chatInput || !chatMessages) return;
+    if (!document.getElementById('gm-chat-zindex-fix')) {
+      const zIndexStyle = document.createElement('style');
+      zIndexStyle.id = 'gm-chat-zindex-fix';
+      zIndexStyle.textContent = `
+        #gm-chat-widget {
+          position: fixed;
+          z-index: 9999 !important;
+        }
+        #gm-chat-panel {
+          position: fixed;
+          z-index: 9999 !important;
+        }
+      `;
+      document.head.appendChild(zIndexStyle);
+    }
   
     /* -------------------------------------------------------
        MOBILE-SAFE CHAT LAYOUT (CSS injected once)
@@ -43,49 +52,25 @@ document.addEventListener('DOMContentLoaded', function () {
       style.id = 'gm-chat-final-css';
       style.textContent = `
         #gm-chat-panel {
-          display: flex;
+          display: flex !important;
           flex-direction: column;
-          height: 100%;
-          max-height: 100%;
+          height: auto;
+          max-height: 70vh;
           pointer-events: none;
         }
         #gm-chat-panel.is-open {
-          pointer-events: auto;
+          pointer-events: auto !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+          display: flex !important;
         }
         #gm-chat-messages {
           flex: 1;
           overflow-y: auto;
           -webkit-overflow-scrolling: touch;
-          padding: 16px;
-        }
-        #gm-chat-input-wrapper {
-          position: relative;
-          display: flex;
-          gap: 8px;
-          padding: 12px;
-          background: #fff;
-          border-top: 1px solid rgba(0,0,0,0.08);
-          padding-bottom: calc(12px + env(safe-area-inset-bottom));
         }
         #gm-chat-input {
           font-size: 16px;
-        }
-  
-        /* Ask About Our Process button styling */
-        .ask-about-process,
-        #ask-about-process {
-          background-color: #d6b26e;
-          color: #000;
-          border: none;
-          border-radius: 8px;
-          padding: 14px 20px;
-          font-weight: 600;
-          cursor: pointer;
-          transition: background-color 0.2s ease;
-        }
-        .ask-about-process:hover,
-        #ask-about-process:hover {
-          background-color: #c9a65f;
         }
       `;
       document.head.appendChild(style);
@@ -97,50 +82,105 @@ document.addEventListener('DOMContentLoaded', function () {
     const isMobile = () =>
       /android|iphone|ipad|ipod/i.test(navigator.userAgent);
   
-    chatInput.addEventListener('focus', () => {
+    chatInput.addEventListener('focus', function() {
       if (!isMobile()) return;
-      setTimeout(() => {
-        chatMessages.scrollTop = chatMessages.scrollHeight;
+      setTimeout(function() {
+        if (chatMessages) {
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
       }, 300);
     });
   
-    chatInput.addEventListener('blur', () => {
-      setTimeout(() => {
+    chatInput.addEventListener('blur', function() {
+      if (!isMobile()) return;
+      setTimeout(function() {
         window.scrollTo(0, 0);
       }, 100);
     });
   
     /* -------------------------------------------------------
-       OPEN CHAT FUNCTION (USED EVERYWHERE)
+       TOGGLE CHAT FUNCTION - ROBUST OPEN/CLOSE
     ------------------------------------------------------- */
-    function openChat() {
-      chatPanel.classList.add('is-open');
-      chatPanel.setAttribute('aria-hidden', 'false');
+    function toggleChat() {
+      if (!chatPanel) return;
+
+      const isOpen = chatPanel.classList.contains('is-open');
+      
+      if (isOpen) {
+        // CLOSE
+        chatPanel.classList.remove('is-open');
+        chatPanel.setAttribute('aria-hidden', 'true');
+        chatPanel.style.opacity = '0';
+        chatPanel.style.visibility = 'hidden';
+        chatPanel.style.pointerEvents = 'none';
+        
+        if (chatToggle) {
+          chatToggle.setAttribute('aria-expanded', 'false');
+        }
+      } else {
+        // OPEN
+        chatPanel.classList.add('is-open');
+        chatPanel.setAttribute('aria-hidden', 'false');
+        chatPanel.style.display = 'flex';
+        chatPanel.style.opacity = '1';
+        chatPanel.style.visibility = 'visible';
+        chatPanel.style.pointerEvents = 'auto';
+        
+        if (chatToggle) {
+          chatToggle.setAttribute('aria-expanded', 'true');
+        }
   
-      if (chatToggle) {
-        chatToggle.setAttribute('aria-expanded', 'true');
+        setTimeout(function() {
+          if (chatInput) {
+            chatInput.focus();
+          }
+          if (chatMessages) {
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+          }
+        }, 300);
       }
-  
-      setTimeout(() => {
-        chatInput.focus();
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-      }, 300);
     }
+
+    // Expose toggle function globally for inline handlers
+    window.toggleChat = toggleChat;
   
     /* -------------------------------------------------------
-       ASK ABOUT OUR PROCESS BUTTON (DESKTOP + MOBILE)
+       BUTTON WIRING - Primary Toggle Button
     ------------------------------------------------------- */
-    const processBtn = document.querySelector(
-      '.ask-about-process, #ask-about-process'
-    );
+    chatToggle.removeEventListener('click', toggleChat);
+    chatToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleChat();
+    });
   
-    if (processBtn) {
-      processBtn.addEventListener('click', function (e) {
+    /* -------------------------------------------------------
+       ADDITIONAL CTA BUTTONS - Wire to toggle
+    ------------------------------------------------------- */
+    const additionalCtas = document.querySelectorAll('.ask-about-process, #ask-about-process');
+    additionalCtas.forEach(function(cta) {
+      if (cta === chatToggle) return;
+      
+      cta.removeEventListener('click', toggleChat);
+      cta.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        openChat();
+        
+        // Only open if closed
+        if (!chatPanel.classList.contains('is-open')) {
+          toggleChat();
+        }
       });
-    }
-  
-  });
-  
+    });
+  }
+
+  /* -------------------------------------------------------
+     DOM READY SAFETY - Single initialization
+  ------------------------------------------------------- */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initChat);
+  } else {
+    initChat();
+  }
+
+})();
