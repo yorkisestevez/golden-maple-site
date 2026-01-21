@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function openChat() {
     panel.classList.add('is-open');
     panel.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('chat-open');
     input.focus();
 
     if (!openedOnce) {
@@ -41,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     closeBtn.addEventListener('click', () => {
       panel.classList.remove('is-open');
       panel.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('chat-open');
     });
   }
 

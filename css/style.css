@@ -1720,5 +1720,29 @@ a[href*="signature-projects.html"] {
 
   .gm-chat-input-row {
     align-items: center;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  #gm-chat-panel.is-open {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    z-index: 9999 !important;
+    box-shadow: none !important;
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .gm-chat-messages {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  body.chat-open {
+    overflow: hidden;
   }
 }
