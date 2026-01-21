@@ -5,6 +5,24 @@
    - Button styling match
    ========================================================= */
 
+// Wire "Ask About Our Process" CTA to the chat toggle
+document.addEventListener('DOMContentLoaded', function () {
+  // Query selectors for possible CTA(s)
+  const askCtas = Array.from(document.querySelectorAll('.ask-about-process, #ask-about-process'));
+  const chatToggle = document.getElementById('gm-chat-toggle');
+
+  if (chatToggle && askCtas.length) {
+    askCtas.forEach(function (cta) {
+      cta.addEventListener('click', function (e) {
+        if (cta.tagName.toLowerCase() === 'a') {
+          e.preventDefault();
+        }
+        // Programmatically trigger chat toggle click
+        chatToggle.click();
+      });
+    });
+  }
+});
    document.addEventListener('DOMContentLoaded', function () {
 
     /* -------------------------------------------------------
