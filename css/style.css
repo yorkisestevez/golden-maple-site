@@ -1708,3 +1708,17 @@ a[href*="signature-projects.html"] {
     text-align: center;
   }
 }
+
+@media (max-width: 768px) {
+  #gm-chat-input {
+    min-height: 48px;
+    height: auto;
+    padding: 12px 14px;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .gm-chat-input-row {
+    align-items: center;
+  }
+}
