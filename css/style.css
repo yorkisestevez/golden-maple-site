@@ -566,6 +566,16 @@ header {
   align-items: center;
   overflow: hidden;
   /* Ensure overlay doesn't spill */
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.hero,
+.hero::before,
+.hero-slideshow,
+.hero-slide {
+  filter: none !important;
+  backdrop-filter: none !important;
 }
 
 /* Slideshow Container */
@@ -584,15 +594,13 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover;
+  background-size: 92% auto;
   /* Full-bleed premium look */
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center center;
   background-color: #000;
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
-  filter: contrast(1.05) brightness(1.02);
-  /* Subtle contrast and clarity boost */
 }
 
 .hero-slide.active {
@@ -606,15 +614,14 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.42);
-  /* Stronger overlay for better text readability */
+  background-color: rgba(0, 0, 0, 0.35);
+  /* Subtle contrast for readability */
   z-index: 1;
+  pointer-events: none;
 }
 
 .hero-text-box {
-  background: rgba(0, 0, 0, 0.38);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.45);
   padding: 4.5rem 3.5rem;
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -1538,19 +1545,6 @@ iframe[src*="gemini"],
   pointer-events: none !important;
 }
 
-/* TEMP: Signature Projects intentionally hidden site-wide */
-a[href*="signature"],
-button[aria-label*="Signature"],
-.signature-projects,
-.view-signature-projects,
-.signature-projects-cta,
-.signature-projects-link,
-.signature-projects-button {
-  display: none !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-}
-
 #gm-chat-widget {
   position: fixed;
   right: 24px;
@@ -1747,6 +1741,10 @@ a[href*="signature-projects.html"] {
 }
 
 @media (max-width: 768px) {
+  .hero-slide {
+    background-size: 96% auto;
+  }
+
   #gm-chat-input {
     min-height: 48px;
     height: auto;
