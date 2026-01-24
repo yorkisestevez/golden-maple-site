@@ -1514,6 +1514,43 @@ img {
 /* 
  * Floating Chat UI
  */
+/* TEMP: Chatbot intentionally hidden site-wide (content preserved) */
+.chatbot,
+.chat-widget,
+.chat-container,
+.chat-launcher,
+.chat-fab,
+[data-chat],
+iframe[src*="chat"],
+iframe[src*="gemini"],
+#gm-chat-widget,
+#gm-chat-panel,
+#gm-chat-toggle,
+#gm-chat-close,
+.gm-chat-header,
+.gm-chat-messages,
+.gm-chat-input-row,
+.gm-chat-message,
+.gm-chat-message.user,
+.gm-chat-message.bot {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* TEMP: Signature Projects intentionally hidden site-wide */
+a[href*="signature"],
+button[aria-label*="Signature"],
+.signature-projects,
+.view-signature-projects,
+.signature-projects-cta,
+.signature-projects-link,
+.signature-projects-button {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
 #gm-chat-widget {
   position: fixed;
   right: 24px;

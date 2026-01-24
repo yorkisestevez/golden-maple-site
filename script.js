@@ -1,4 +1,8 @@
+window.CHAT_DISABLED = true;
+
 document.addEventListener('DOMContentLoaded', () => {
+  if (window.CHAT_DISABLED) return;
+
   const panel = document.getElementById('gm-chat-panel');
   const toggle = document.getElementById('gm-chat-toggle');
   const input = document.getElementById('gm-chat-input');
