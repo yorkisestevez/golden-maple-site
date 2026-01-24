@@ -259,13 +259,13 @@
 
             <!-- SCREEN 1: Intro -->
             <div class="wizard-step active" data-step="1">
-                <h2 class="step-title">Structured Intake</h2>
+                <h2 class="step-title">Project Intake</h2>
                 <p style="margin-bottom: 2rem;">
-                    This short review confirms alignment and readiness before we open the design conversation.
+                    This short intake helps us understand your project and confirm alignment before starting the design conversation.
                     <br><br>
-                    It keeps the process calm yet disciplined, so every next step feels intentional and fitting for the scope.
+                    It allows us to review scope, timing, and fit so the next steps are clear, calm, and well-considered.
                     <br><br>
-                    <span class="secondary-social">Follow our latest projects and behind-the-scenes work.</span>
+                    <span class="secondary-social">You can also explore our recent projects and work in progress.</span>
                 </p>
                 <button type="button" class="btn btn-large" onclick="nextStep(1)">Continue</button>
             </div>
@@ -292,7 +292,7 @@
                 <div class="form-group">
                     <label>Project Location (Street, City)</label>
                     <input type="text" name="location" id="field-location" placeholder="123 Maple Dr, Barrie" required>
-                    <span class="note-text">Why we ask: confirms service area and site context.</span>
+                    <span class="note-text">This helps us confirm service area and understand the site.</span>
                 </div>
 
                 <p class="field-error" aria-live="polite"></p>
@@ -304,7 +304,7 @@
                 <h2 class="step-title">Project Overview</h2>
 
                 <div class="form-group">
-                    <label>What are you looking to build?</label>
+                    <label>What does your project include?</label>
                     <div class="option-group">
                         <div class="option-card">
                             <input type="checkbox" name="project_type" id="type-patio" value="Patio">
@@ -335,7 +335,7 @@
 
                 <div class="form-group">
                     <label>Desired Timeline</label>
-                    <span class="note-text">Why we ask: helps us align planning and build windows.</span>
+                    <span class="note-text">This helps us plan design and construction timing.</span>
                     <div class="option-group">
                         <div class="option-card">
                             <input type="radio" name="timeline" id="time-spring" value="Spring" required>
@@ -358,25 +358,24 @@
 
             <!-- SCREEN 4: Planning Alignment (Budget) -->
             <div class="wizard-step" data-step="4">
-                <h2 class="step-title">Planning Alignment</h2>
+                <h2 class="step-title">Project Scale</h2>
 
                 <div class="form-group">
                     <label>Planning Alignment</label>
-                    <span class="note-text" style="display:block; margin-bottom:1rem;">Why we ask: aligns scope,
-                        complexity, and design coordination before construction begins.</span>
+                    <span class="note-text" style="display:block; margin-bottom:1rem;">This helps us understand the overall scope and level of coordination your project may require.</span>
 
                     <div class="option-group">
                         <div class="option-card">
                             <input type="radio" name="budget" id="budget-a" value="10-25k" required>
-                            <label for="budget-a">Focused upgrades or remediation</label>
+                            <label for="budget-a">Targeted improvements or smaller-scale projects</label>
                         </div>
                         <div class="option-card">
                             <input type="radio" name="budget" id="budget-b" value="25-150k">
-                            <label for="budget-b">Comprehensive outdoor living environments</label>
+                            <label for="budget-b">Full outdoor living spaces with multiple elements</label>
                         </div>
                         <div class="option-card">
                             <input type="radio" name="budget" id="budget-d" value="150k+">
-                            <label for="budget-d">Complex, multi-area transformations</label>
+                            <label for="budget-d">Large-scale or multi-area transformations</label>
                         </div>
                     </div>
                 </div>
@@ -387,12 +386,12 @@
 
             <!-- SCREEN 5: Details -->
             <div class="wizard-step" data-step="5">
-                <h2 class="step-title">Details & Context</h2>
+                <h2 class="step-title">Project Details</h2>
 
                 <div class="form-group">
-                    <label>Tell us about your space and goals</label>
+                    <label>Tell us about your space</label>
                     <textarea name="goals" rows="5"
-                        placeholder="What are you hoping to improve or change? Any challenges we should be aware of?"></textarea>
+                        placeholder="What are you hoping to build or improve? Are there any challenges we should be aware of?"></textarea>
                 </div>
 
                 <!-- Uploadcare Image Upload Widget -->
@@ -406,24 +405,23 @@
                         data-clearable="true"
                         name="uploaded_images"
                     />
-                    <span class="note-text">Ideally 1-3 photos of the current space.</span>
+                    <span class="note-text">Photos help us understand the existing conditions.</span>
                 </div>
 
                 <button type="button" class="btn btn-large" onclick="submitWizard()">Submit Inquiry</button>
-                <p class="note-text" style="margin-top: 0.75rem;">We use this to confirm fit and give you clear next
-                    steps. No spam.</p>
+                <p class="note-text" style="margin-top: 0.75rem;">We review every request carefully and will follow up if it’s a good fit.</p>
                 <p class="field-error" aria-live="polite"></p>
             </div>
 
             <!-- SCREEN 6: Success (Unified Neutral) -->
             <div class="wizard-step" id="step-confirmation">
-                <h2 class="step-title text-gold">Thanks — we've received your request</h2>
+                <h2 class="step-title text-gold">Thank you — your request has been received</h2>
                 <div class="bg-accent"
                     style="padding: 2.5rem; margin: 1.5rem 0; border-radius: 4px; background: #fff; border: 1px solid #eee; text-align: center;">
                     <p style="font-size: 1.1rem; line-height: 1.6; color: #333; margin-bottom: 2rem;">
                         Thank you for reaching out to Golden Maple Landscaping.<br>
-                        Your information has been received, and our team will review your request shortly.<br>
-                        If your project is a good fit, we'll be in touch to discuss next steps.
+                        We’ve received your information and will review it shortly.<br>
+                        If your project aligns with our current scope, we’ll be in touch to discuss next steps.
                     </p>
                     <a href="index.html" class="btn btn-large">Return to Homepage</a>
                 </div>
@@ -508,7 +506,7 @@
                 const phone = document.getElementById('field-phone').value;
                 const location = document.getElementById('field-location').value;
                 if (!name || !email || !phone || !location) {
-                    showError(2, "Please provide your name, email, phone, and project location to continue.", [
+                    showError(2, "Please complete all contact fields so we can continue.", [
                         'field-name',
                         'field-email',
                         'field-phone',
@@ -520,14 +518,14 @@
             if (current === 3) {
                 const timeline = document.querySelector('input[name="timeline"]:checked');
                 if (!timeline) {
-                    showError(3, "Please select a desired timeline to continue.");
+                    showError(3, "Please select a general timeline to continue.");
                     return;
                 }
             }
             if (current === 4) {
                 const budget = document.querySelector('input[name="budget"]:checked');
                 if (!budget) {
-                    showError(4, "Please select a planning alignment to continue.");
+                    showError(4, "Please select the option that best reflects your project.");
                     return;
                 }
             }
