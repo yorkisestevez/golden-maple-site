@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- Uploadcare Configuration -->
     <script>
-      UPLOADCARE_PUBLIC_KEY = "77fac79c8646cc9be771";
+        UPLOADCARE_PUBLIC_KEY = "77fac79c8646cc9be771";
     </script>
     <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
     <style>
@@ -29,7 +29,7 @@
         .wizard-container {
             max-width: 600px;
             margin: 2rem auto;
-            background: #fff;
+            background: var(--color-bg-light);
             padding: 2rem 1.5rem;
             min-height: 60vh;
             position: relative;
@@ -39,13 +39,13 @@
             position: sticky;
             top: 70px;
             /* Below fixed header */
-            background: white;
+            background: var(--color-bg-light);
             z-index: 100;
             padding-bottom: 1rem;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--color-accent-soft);
             margin-bottom: 2rem;
             font-size: 0.9rem;
-            color: var(--color-gold);
+            color: var(--color-accent);
             font-weight: 600;
         }
 
@@ -88,11 +88,13 @@
         select {
             width: 100%;
             padding: 1rem;
-            border: 1px solid #ddd;
+            border: 1px solid var(--color-accent-soft);
             border-radius: 4px;
             font-size: 1rem;
             transition: border-color 0.2s;
             box-sizing: border-box;
+            background: #fff;
+            color: var(--color-text-primary);
         }
 
         input:focus,
@@ -123,12 +125,13 @@
         .option-card label {
             display: block;
             padding: 1rem;
-            border: 1px solid #ddd;
+            border: 1px solid var(--color-accent-soft);
             border-radius: 4px;
             cursor: pointer;
             font-weight: 500;
             transition: all 0.2s;
             margin-bottom: 0;
+            background: #fff;
         }
 
         .option-card input:checked+label {
@@ -144,20 +147,20 @@
 
         .note-text {
             font-size: 0.85rem;
-            color: #666;
+            color: var(--color-text-secondary);
             margin-top: 0.5rem;
             line-height: 1.4;
         }
 
         .field-error {
-            color: #8a3b3b;
+            color: var(--color-accent);
             font-size: 0.9rem;
             margin-top: 0.75rem;
             display: none;
         }
 
         .input-error {
-            border-color: #c16464;
+            border-color: var(--color-accent);
         }
 
         h2.step-title {
@@ -183,7 +186,7 @@
                 <a href="pages/process.html">Our Process</a>
                 <a href="pages/about.html">About</a>
                 <div class="nav-dropdown">
-                    <a href="resources.html">Resources ▾</a>
+                    <a href="resources.html" class="text-gold">Resources ▾</a>
                     <div class="dropdown-menu">
                         <a href="resources.html">Blog / Guides</a>
                         <a href="pages/gallery.html">Project Gallery</a>
@@ -195,7 +198,7 @@
             </nav>
 
             <div class="social-nav header-social">
-                <a href="https://www.instagram.com/goldenmaplelandscaping/" target="_blank" class="icon-link"
+                <a href="https://www.instagram.com/goldenmaplelandscaping.ca" target="_blank" class="icon-link"
                     aria-label="Instagram">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" class="icon-social">
@@ -217,12 +220,12 @@
                 <a href="pages/process.html">Our Process</a>
                 <a href="pages/about.html">About</a>
                 <div class="mobile-dropdown-menu">
-                    <a href="resources.html" style="color: var(--color-gold);">Blog / Guides</a>
+                    <a href="resources.html" class="text-gold">Blog / Guides</a>
                     <a href="pages/gallery.html">Project Gallery</a>
                     <a href="investment-levels.html">Investment Levels</a>
                 </div>
                 <div class="mobile-drawer-social">
-                    <a href="https://www.instagram.com/goldenmaplelandscaping/" target="_blank" class="icon-link"
+                    <a href="https://www.instagram.com/goldenmaplelandscaping.ca" target="_blank" class="icon-link"
                         aria-label="Instagram">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round" class="icon-social">
@@ -260,10 +263,11 @@
             <!-- SCREEN 1: Intro -->
             <div class="wizard-step active" data-step="1">
                 <h2 class="step-title">Tell Us About Your Project</h2>
-                <p style="margin-bottom: 2rem;">
+                <p class="mb-2">
                     This short form helps us learn a bit about your project before we connect.
                     <br><br>
-                    It gives us context around your space, timing, and goals so we can have a productive, stress-free conversation.
+                    It gives us context around your space, timing, and goals so we can have a productive, stress-free
+                    conversation.
                     <br><br>
                     There’s no pressure — just a first step to see if we’re a good fit.
                 </p>
@@ -362,7 +366,8 @@
 
                 <div class="form-group">
                     <label>Planning Alignment</label>
-                    <span class="note-text" style="display:block; margin-bottom:1rem;">This helps us understand the general size and complexity of your project.</span>
+                    <span class="note-text block mb-1">This helps us understand the
+                        general size and complexity of your project.</span>
 
                     <div class="option-group">
                         <div class="option-card">
@@ -397,28 +402,23 @@
                 <!-- Uploadcare Image Upload Widget -->
                 <div class="form-group">
                     <label>Upload project photos (optional)</label>
-                    <input
-                        type="hidden"
-                        role="uploadcare-uploader"
-                        data-multiple="true"
-                        data-images-only="true"
-                        data-clearable="true"
-                        name="uploaded_images"
-                    />
+                    <input type="hidden" role="uploadcare-uploader" data-multiple="true" data-images-only="true"
+                        data-clearable="true" name="uploaded_images" />
                     <span class="note-text">Photos help us get a better sense of the space.</span>
                 </div>
 
                 <button type="button" class="btn btn-large" onclick="submitWizard()">Submit Inquiry</button>
-                <p class="note-text" style="margin-top: 0.75rem;">We’ll review your request and reach out if it’s a good fit.</p>
+                <p class="note-text" style="margin-top: 0.75rem;">We’ll review your request and reach out if it’s a good
+                    fit.</p>
                 <p class="field-error" aria-live="polite"></p>
             </div>
 
             <!-- SCREEN 6: Success (Unified Neutral) -->
             <div class="wizard-step" id="step-confirmation">
                 <h2 class="step-title text-gold">Thanks — we’ve received your message</h2>
-                <div class="bg-accent"
-                    style="padding: 2.5rem; margin: 1.5rem 0; border-radius: 4px; background: #fff; border: 1px solid #eee; text-align: center;">
-                    <p style="font-size: 1.1rem; line-height: 1.6; color: #333; margin-bottom: 2rem;">
+                <div class="bg-secondary accent-box"
+                    style="padding: 2.5rem; margin: 1.5rem 0; border-radius: 4px; text-align: center;">
+                    <p class="text-secondary" style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
                         Thanks for reaching out to Golden Maple Landscaping.<br>
                         We’ve received your information and will review it shortly.<br>
                         If it looks like a good fit, someone from our team will be in touch.
@@ -570,7 +570,8 @@
         <div class="container footer-grid">
             <div class="footer-block">
                 <h3>Golden Maple Landscaping</h3>
-                <p>Design-build services including patios, steps, retaining walls, decks, outdoor lighting, drainage, artificial turf, and full backyard transformations.</p>
+                <p>Design-build services including patios, steps, retaining walls, decks, outdoor lighting, drainage,
+                    artificial turf, and full backyard transformations.</p>
             </div>
             <div class="footer-block">
                 <h3>Service Area</h3>
@@ -587,7 +588,7 @@
                         class="footer-link">goldenmaplelandscaping@gmail.com</a>
                 </address>
                 <div class="footer-social-wrap">
-                    <a href="https://www.instagram.com/goldenmaplelandscaping/" target="_blank" class="icon-link"
+                    <a href="https://www.instagram.com/goldenmaplelandscaping.ca" target="_blank" class="icon-link"
                         aria-label="Instagram">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round" class="icon-social">
@@ -612,21 +613,21 @@
             </div>
         </div>
     </footer>
-<div id="gm-chat-widget">
-    <button id="gm-chat-toggle" type="button" aria-expanded="false" aria-controls="gm-chat-panel">
-        Ask About Our Process
-    </button>
-    <div id="gm-chat-panel" role="dialog" aria-modal="false" aria-hidden="true" aria-label="Golden Maple Planning Assistant">
-        <button id="gm-chat-close" aria-label="Close chat">×</button>
-        <div class="gm-chat-header">Golden Maple Planning Assistant</div>
-        <div id="gm-chat-messages" class="gm-chat-messages" aria-live="polite"></div>
-        <div class="gm-chat-input-row">
-            <input id="gm-chat-input" type="text" placeholder="Ask a question..." autocomplete="off" />
-            <button id="gm-chat-send" type="button">Send</button>
+    <div id="gm-chat-widget">
+        <button id="gm-chat-toggle" type="button" aria-expanded="false" aria-controls="gm-chat-panel">
+            Ask About Our Process
+        </button>
+        <div id="gm-chat-panel" role="dialog" aria-modal="false" aria-hidden="true"
+            aria-label="Golden Maple Planning Assistant">
+            <button id="gm-chat-close" aria-label="Close chat">×</button>
+            <div class="gm-chat-header">Golden Maple Planning Assistant</div>
+            <div id="gm-chat-messages" class="gm-chat-messages" aria-live="polite"></div>
+            <div class="gm-chat-input-row">
+                <input id="gm-chat-input" type="text" placeholder="Ask a question..." autocomplete="off" />
+                <button id="gm-chat-send" type="button">Send</button>
+            </div>
         </div>
     </div>
-</div>
 </body>
 
 </html>
-

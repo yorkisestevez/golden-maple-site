@@ -1,6 +1,35 @@
 window.CHAT_DISABLED = true;
 
 document.addEventListener('DOMContentLoaded', () => {
+  const triggers = document.querySelectorAll('.faq-trigger');
+  if (triggers.length) {
+    triggers.forEach(trigger => {
+      if (trigger.dataset.faqBound === 'true') return;
+      trigger.dataset.faqBound = 'true';
+
+      const item = trigger.closest('.faq-item');
+      if (!item) return;
+      const content = item.querySelector('.faq-answer, .faq-content');
+      if (!content) return;
+
+      trigger.setAttribute('aria-expanded', 'false');
+      content.setAttribute('aria-hidden', 'true');
+
+      trigger.addEventListener('click', event => {
+        event.preventDefault();
+        const isActive = item.classList.toggle('active');
+        content.classList.toggle('active', isActive);
+        trigger.setAttribute('aria-expanded', String(isActive));
+        content.setAttribute('aria-hidden', String(!isActive));
+
+        const icon = trigger.querySelector('.faq-icon');
+        if (icon) {
+          icon.textContent = isActive ? '-' : '+';
+        }
+      });
+    });
+  }
+
   if (window.CHAT_DISABLED) return;
 
   const panel = document.getElementById('gm-chat-panel');
