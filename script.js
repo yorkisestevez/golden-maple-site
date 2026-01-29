@@ -30,6 +30,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const mobileToggle = document.querySelector('.mobile-toggle');
+  const mobileMenu = document.querySelector('.mobile-menu-overlay');
+
+  if (mobileToggle && mobileMenu && mobileToggle.dataset.mobileBound !== 'true') {
+    mobileToggle.dataset.mobileBound = 'true';
+    mobileMenu.classList.remove('active');
+    mobileToggle.setAttribute('aria-expanded', 'false');
+
+    mobileToggle.addEventListener('click', event => {
+      event.preventDefault();
+      const isActive = mobileMenu.classList.toggle('active');
+      mobileToggle.setAttribute('aria-expanded', String(isActive));
+    });
+
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
   if (window.CHAT_DISABLED) return;
 
   const panel = document.getElementById('gm-chat-panel');
