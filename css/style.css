@@ -463,6 +463,12 @@ header {
   /* Soft contrast */
 }
 
+.builder-spotlight .builder-profile-img {
+  max-width: 360px;
+  margin: 0 auto;
+  display: block;
+}
+
 .builder-profile-img {
   width: 100%;
   height: auto;
@@ -854,7 +860,7 @@ header {
 }
 
 .service-hero.hero-lighting {
-  background-image: url('../New website pictures 2026 revised/IMG_8735.jpg');
+  background-image: url('../New website pictures 2026 revised/outdoor-lighting1.png');
   background-position: center 45%;
 }
 
@@ -1337,7 +1343,7 @@ img {
 
   /* Ensure select dropdowns have proper touch target */
   select {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-image: url('../New website pictures 2026 revised/outdoor-lighting1.png');
     background-position: right 0.75rem center;
     background-repeat: no-repeat;
     background-size: 1.5em 1.5em;
