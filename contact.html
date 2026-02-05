@@ -23,7 +23,7 @@
       gtag('config', 'G-YRS2JFS51V');
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Start Your Project | Golden Maple Landscaping</title>
+    <title>Start Your Design Conversation | Golden Maple Landscaping</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -202,8 +202,8 @@
                         <a href="investment-levels.html">Investment Levels</a>
                     </div>
                 </div>
-                <a href="tel:7055003581" class="btn btn-outline" aria-label="Call our team">Call Our Team</a>
-                <a href="contact.html" class="btn">Start Your Project</a>
+                <a href="investment-levels.html" class="btn btn-outline" aria-label="Explore investment ranges">Explore Investment Ranges</a>
+                <a href="contact.html" class="btn">Start Your Design Conversation</a>
             </nav>
 
             <div class="social-nav header-social">
@@ -251,15 +251,15 @@
                         </svg>
                     </a>
                 </div>
-                <a href="tel:7055003581" class="btn btn-outline btn-large" aria-label="Call our team">Call Our Team</a>
-                <a href="contact.html" class="btn btn-large">Start Your Project</a>
+                <a href="investment-levels.html" class="btn btn-outline btn-large" aria-label="Explore investment ranges">Explore Investment Ranges</a>
+                <a href="contact.html" class="btn btn-large">Start Your Design Conversation</a>
             </div>
         </div>
     </header>
 
     <div class="wizard-container">
         <!-- Progress -->
-        <div class="step-indicator" id="progress-text">Step 1 of 4</div>
+        <div class="step-indicator" id="progress-text">Step 1 of 5</div>
 
         <!-- Form Form -->
         <form id="intake-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
@@ -269,8 +269,50 @@
             <!-- Anti-Spam Honeypot -->
             <input type="text" name="bot-field" style="display:none">
 
-            <!-- SCREEN 1: Intro -->
+            <input type="hidden" name="investment_range" id="field-investment-range">
+
+            <!-- SCREEN 1: Investment Range -->
             <div class="wizard-step active" data-step="1">
+                <h2 class="step-title">Project Investment Range</h2>
+                <p class="mb-2">
+                    A quick step to confirm alignment before the full intake.
+                </p>
+                <div class="form-group">
+                    <label>Which investment range best reflects your project?</label>
+                    <div class="option-group">
+                        <div class="option-card">
+                            <input type="radio" name="investment_range_choice" id="investment-12-20"
+                                value="$12,000–$20,000" required>
+                            <label for="investment-12-20">$12,000–$20,000</label>
+                        </div>
+                        <div class="option-card">
+                            <input type="radio" name="investment_range_choice" id="investment-20-50"
+                                value="$20,000–$50,000">
+                            <label for="investment-20-50">$20,000–$50,000</label>
+                        </div>
+                        <div class="option-card">
+                            <input type="radio" name="investment_range_choice" id="investment-50-90"
+                                value="$50,000–$90,000">
+                            <label for="investment-50-90">$50,000–$90,000</label>
+                        </div>
+                        <div class="option-card">
+                            <input type="radio" name="investment_range_choice" id="investment-90-150"
+                                value="$90,000–$150,000+">
+                            <label for="investment-90-150">$90,000–$150,000+</label>
+                        </div>
+                        <div class="option-card">
+                            <input type="radio" name="investment_range_choice" id="investment-custom"
+                                value="Custom / Complex">
+                            <label for="investment-custom">Custom / Complex</label>
+                        </div>
+                    </div>
+                </div>
+                <p class="field-error" aria-live="polite"></p>
+                <button type="button" class="btn btn-large" onclick="nextStep(1)">Continue</button>
+            </div>
+
+            <!-- SCREEN 2: Intro -->
+            <div class="wizard-step" data-step="2">
                 <h2 class="step-title">Tell Us About Your Project</h2>
                 <p class="mb-2">
                     This short form helps us learn a bit about your project before we connect.
@@ -280,11 +322,11 @@
                     <br><br>
                     There’s no pressure — just a first step to see if we’re a good fit.
                 </p>
-                <button type="button" class="btn btn-large" onclick="nextStep(1)">Get Started</button>
+                <button type="button" class="btn btn-large" onclick="nextStep(2)">Get Started</button>
             </div>
 
-            <!-- SCREEN 2: Contact & Location -->
-            <div class="wizard-step" data-step="2">
+            <!-- SCREEN 3: Contact & Location -->
+            <div class="wizard-step" data-step="3">
                 <h2 class="step-title">Contact Details</h2>
 
                 <div class="form-group">
@@ -309,11 +351,11 @@
                 </div>
 
                 <p class="field-error" aria-live="polite"></p>
-                <button type="button" class="btn btn-large" onclick="nextStep(2)">Continue</button>
+                <button type="button" class="btn btn-large" onclick="nextStep(3)">Continue</button>
             </div>
 
-            <!-- SCREEN 3: Project Overview -->
-            <div class="wizard-step" data-step="3">
+            <!-- SCREEN 4: Project Overview -->
+            <div class="wizard-step" data-step="4">
                 <h2 class="step-title">Project Overview</h2>
 
                 <div class="form-group">
@@ -366,11 +408,11 @@
                 </div>
 
                 <p class="field-error" aria-live="polite"></p>
-                <button type="button" class="btn btn-large" onclick="nextStep(3)">Continue</button>
+                <button type="button" class="btn btn-large" onclick="nextStep(4)">Continue</button>
             </div>
 
-            <!-- SCREEN 4: Planning Alignment (Budget) -->
-            <div class="wizard-step" data-step="4">
+            <!-- SCREEN 5: Planning Alignment (Budget) -->
+            <div class="wizard-step" data-step="5">
                 <h2 class="step-title">Project Size</h2>
 
                 <div class="form-group">
@@ -380,7 +422,7 @@
 
                     <div class="option-group">
                         <div class="option-card">
-                            <input type="radio" name="budget" id="budget-a" value="10-25k" required>
+                            <input type="radio" name="budget" id="budget-a" value="12-20k" required>
                             <label for="budget-a">Smaller upgrades or improvements</label>
                         </div>
                         <div class="option-card">
@@ -395,11 +437,11 @@
                 </div>
 
                 <p class="field-error" aria-live="polite"></p>
-                <button type="button" class="btn btn-large" onclick="nextStep(4)">Continue to Final Step</button>
+                <button type="button" class="btn btn-large" onclick="nextStep(5)">Continue to Final Step</button>
             </div>
 
-            <!-- SCREEN 5: Details -->
-            <div class="wizard-step" data-step="5">
+            <!-- SCREEN 6: Details -->
+            <div class="wizard-step" data-step="6">
                 <h2 class="step-title">A Few More Details</h2>
 
                 <div class="form-group">
@@ -422,7 +464,7 @@
                 <p class="field-error" aria-live="polite"></p>
             </div>
 
-            <!-- SCREEN 6: Success (Unified Neutral) -->
+            <!-- SCREEN 7: Success (Unified Neutral) -->
             <div class="wizard-step" id="step-confirmation">
                 <h2 class="step-title text-gold">Thanks — we’ve received your message</h2>
                 <div class="bg-secondary accent-box"
@@ -443,14 +485,14 @@
     <script src="script.js"></script> <!-- Includes nav toggle -->
     <script>
         let currentStep = 1;
-        const totalExposedSteps = 4; // Visual step count
+        const totalExposedSteps = 5; // Visual step count
 
         function updateProgress(step) {
             const indicator = document.getElementById('progress-text');
             indicator.style.display = 'block';
             if (step <= totalExposedSteps) {
                 indicator.innerText = `Step ${step} of ${totalExposedSteps}`;
-            } else if (step === 5) {
+            } else if (step === 6) {
                 indicator.innerText = `Step ${totalExposedSteps} of ${totalExposedSteps}`;
             } else {
                 indicator.style.display = 'none';
@@ -509,13 +551,24 @@
         function nextStep(current) {
             clearErrors(current);
             // Validation
-            if (current === 2) {
+            if (current === 1) {
+                const investmentChoice = document.querySelector('input[name="investment_range_choice"]:checked');
+                if (!investmentChoice) {
+                    showError(1, "Please select the range that fits your project.");
+                    return;
+                }
+                const investmentField = document.getElementById('field-investment-range');
+                if (investmentField) {
+                    investmentField.value = investmentChoice.value;
+                }
+            }
+            if (current === 3) {
                 const name = document.getElementById('field-name').value;
                 const email = document.getElementById('field-email').value;
                 const phone = document.getElementById('field-phone').value;
                 const location = document.getElementById('field-location').value;
                 if (!name || !email || !phone || !location) {
-                    showError(2, "Please fill in all fields so we can move forward.", [
+                    showError(3, "Please fill in all fields so we can move forward.", [
                         'field-name',
                         'field-email',
                         'field-phone',
@@ -524,17 +577,17 @@
                     return;
                 }
             }
-            if (current === 3) {
+            if (current === 4) {
                 const timeline = document.querySelector('input[name="timeline"]:checked');
                 if (!timeline) {
-                    showError(3, "Please choose a timeline so we can continue.");
+                    showError(4, "Please choose a timeline so we can continue.");
                     return;
                 }
             }
-            if (current === 4) {
+            if (current === 5) {
                 const budget = document.querySelector('input[name="budget"]:checked');
                 if (!budget) {
-                    showError(4, "Please select the option that fits your project best.");
+                    showError(5, "Please select the option that fits your project best.");
                     return;
                 }
             }
@@ -545,7 +598,7 @@
         }
 
         function submitWizard() {
-            clearErrors(5);
+            clearErrors(6);
             const form = document.getElementById('intake-form');
             const name = document.getElementById('field-name').value;
             const email = document.getElementById('field-email').value;
@@ -553,7 +606,7 @@
             const location = document.getElementById('field-location').value;
 
             if (!name || !email || !phone || !location) {
-                showError(5, "Please confirm your contact details before submitting.");
+                showError(6, "Please confirm your contact details before submitting.");
                 return;
             }
 

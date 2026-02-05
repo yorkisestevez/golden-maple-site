@@ -336,6 +336,13 @@ h6 .text-gold,
   font-size: 0.9rem;
 }
 
+.subtle-divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(15, 18, 20, 0.12);
+  margin: 1.25rem 0;
+}
+
 .secondary-text,
 .meta,
 .caption {
@@ -757,7 +764,13 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(15, 18, 20, 0.35);
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 18, 20, 0.35) 0%,
+    rgba(15, 18, 20, 0.35) 45%,
+    rgba(15, 18, 20, 0.5) 70%,
+    rgba(15, 18, 20, 0.6) 100%
+  );
   /* Subtle contrast for readability */
   z-index: 1;
   pointer-events: none;
@@ -798,6 +811,53 @@ header {
   margin-right: auto;
   margin-bottom: 2.75rem;
   /* Increased gap to CTA */
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.hero-investment-note {
+  margin-top: 1.75rem;
+  text-align: left;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--color-white);
+  background: rgba(0, 0, 0, 0.32);
+  padding: 1.25rem 1.5rem;
+  border-radius: 10px;
+  backdrop-filter: blur(2px);
+}
+
+.hero-investment-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.75rem;
+  color: var(--color-white);
+}
+
+.hero-investment-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: rgba(246, 244, 239, 0.9);
+}
+
+.hero-investment-list li::before {
+  content: "• ";
+  color: rgba(246, 244, 239, 0.75);
+}
+
+.hero .subtle-divider {
+  background-color: rgba(246, 244, 239, 0.2);
 }
 
 @media (min-width: 768px) {
@@ -1241,6 +1301,14 @@ header {
 
 .gallery-caption {
   padding: 1.5rem;
+}
+
+.gallery-caption::before {
+  content: "Design-build project — multi-phase installation";
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.5rem;
 }
 
 .gallery-caption h3 {
