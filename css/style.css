@@ -602,9 +602,9 @@ header {
   align-items: center;
 }
 
-/* Desktop Nav hidden for Pure Anti-Gravity Minimalist Look */
+/* Desktop Nav - Visible by default, hidden on mobile below */
 .desktop-nav {
-  display: none !important;
+  display: flex;
 }
 
 /* Premium header spacing (desktop only) */
@@ -941,10 +941,10 @@ header {
   display: block;
 }
 
-/* Mobile toggle and overlay: hidden - full nav always visible on all devices */
+/* Mobile components: Controlled by media queries below */
 .mobile-toggle,
 .mobile-menu-overlay {
-  display: none !important;
+  display: block;
 }
 
 /* Mobile/Tablet: Header shows everything in vertical stack */
@@ -968,6 +968,7 @@ header {
   }
 
   .desktop-nav {
+    display: none !important;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
@@ -1838,6 +1839,14 @@ header {
   .desktop-nav a {
     white-space: nowrap;
     font-size: clamp(14px, 1vw, 16px);
+    color: #FFFFFF !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s ease;
+  }
+
+  .desktop-nav a:hover {
+    color: var(--gm-gold) !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   }
 
   /* Make header CTA buttons bold like nav links */
@@ -1878,6 +1887,15 @@ header {
 
   .desktop-nav .btn-outline {
     margin: 0;
+    border: 2px solid #FFFFFF !important;
+    color: #FFFFFF !important;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+  }
+
+  .desktop-nav .btn-outline:hover {
+    background: #FFFFFF !important;
+    color: var(--gm-black) !important;
   }
 
   .nav-dropdown {
@@ -1898,6 +1916,11 @@ header {
   .logo {
     font-size: 22px;
     flex-shrink: 0;
+  }
+
+  /* Hide Mobile FAB on Desktop */
+  .header-actions-fab {
+    display: none !important;
   }
 }
 
@@ -1958,12 +1981,13 @@ header {
  */
 .hero {
   position: relative;
-  min-height: 80vh;
-  /* Enforce height */
+  min-height: 90vh;
+  /* Increased height for better proportions */
   display: flex;
   align-items: center;
   overflow: hidden;
-  /* Ensure overlay doesn't spill */
+  padding-top: 130px;
+  /* Generous offset for absolute header */
   padding-left: 0;
   padding-right: 0;
   width: 100%;
@@ -2100,20 +2124,17 @@ header {
 }
 
 .hero-text-box {
-  background: rgba(255, 255, 255, 0.05);
-  /* Ultra-light ethereal base */
-  padding: 5rem 4rem;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  /* Master Spec Rule: 1px 20% border */
-  box-shadow: none;
-  /* Master Spec: Remove heavy shadows */
-  max-width: 900px;
+  background: rgba(15, 18, 20, 0.22);
+  /* Darker refined tint */
+  padding: 3rem 4rem;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  max-width: 820px;
   width: 90%;
   margin: 0 auto;
-  backdrop-filter: blur(12px) brightness(0.9);
-  /* Master Spec Rule */
-  -webkit-backdrop-filter: blur(12px) brightness(0.9);
+  backdrop-filter: blur(5px) brightness(0.9);
+  /* Reduced blur, slight darkening */
+  -webkit-backdrop-filter: blur(5px) brightness(0.9);
 }
 
 .hero-content {
@@ -2263,8 +2284,8 @@ header {
   }
 
   .hero-text-box {
-    padding: 5.5rem 4.5rem;
-    max-width: 82%;
+    padding: 3.5rem 4.5rem;
+    max-width: 80%;
   }
 }
 
@@ -2643,9 +2664,9 @@ header {
     position: absolute;
     top: calc(100% + 5px);
     left: 0;
-    background: var(--color-bg-light);
+    background: #1a1a18;
     min-width: 220px;
-    box-shadow: 0 15px 40px rgba(15, 18, 20, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
     border-radius: 4px;
     opacity: 0;
     visibility: hidden;
@@ -2667,13 +2688,13 @@ header {
     padding: 0.75rem 1.5rem;
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--color-text-primary);
+    color: #ffffff;
     transition: all var(--transition-fast);
   }
 
   .dropdown-menu a:hover {
-    background: var(--gm-white);
-    color: var(--gm-black);
+    background: rgba(255, 255, 255, 0.06);
+    color: #b8924a;
     padding-left: 1.75rem;
   }
 
@@ -2689,7 +2710,7 @@ header {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--text-secondary);
+    color: #b8924a;
     pointer-events: none;
     border: none;
   }
