@@ -25,7 +25,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patios & Walkways | Golden Maple Landscaping</title>
     <meta name="description"
-        content="Premium patio and walkway construction in Barrie and Simcoe County. Backed by a 5-year workmanship warranty.">
+        content="Premium patio and walkway construction in Barrie and Simcoe County. Backed by an up to 10-year workmanship warranty (by build tier).">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -45,7 +45,7 @@
         "@type": "State",
         "name": "Simcoe County"
       },
-      "description": "High-quality interlock and natural stone patio construction with structural 5-year warranty.",
+      "description": "High-quality interlock and natural stone patio construction with up to 10-year workmanship warranty by build tier.",
       "offers": {
         "@type": "Offer",
         "priceCurrency": "CAD",
@@ -66,6 +66,12 @@
 </head>
 
 <body>
+    <!-- Urgency Bar -->
+    <div id="gm-urgency-bar" class="gm-urgency-bar">
+        <a href="../../contact.html#gm-contact-section">Now Booking Spring &amp; Summer Projects — Limited Construction Schedule Available</a>
+        <button type="button" class="gm-urgency-bar-close" aria-label="Dismiss">✕</button>
+    </div>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NWMC6M9P" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
@@ -76,10 +82,42 @@
         <div class="container nav-container">
             <a href="../../index.html" class="logo">Golden Maple <span class="text-gold">Landscaping</span></a>
 
-            <div class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</div>
+            
+
+                        <!-- Anti-Gravity Header Controls (FAB) -->
+            <div class="header-actions-fab">
+                <a href="tel:7055003581" class="fab-phone" aria-label="Call Now">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                </a>
+                <div class="mobile-toggle-ag" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                </div>
+            </div>
 
             <nav class="desktop-nav">
-                <a href="../../index.html#services">Services</a>
+                <div class="nav-dropdown">
+                    <a href="../../index.html#services">Services ▾</a>
+                    <div class="dropdown-menu dropdown-services">
+                        <span class="dropdown-group-label">Design</span>
+                        <a href="landscape-design.html">Professional Landscape Design (2D &amp; 3D)</a>
+                        <span class="dropdown-group-label">Outdoor Living &amp; Hardscape</span>
+                        <a href="../../services/backyard-projects.html">Outdoor Kitchens &amp; Cooking Areas</a>
+                        <a href="../../services/fire-pits-fire-features.html">Fire Pits &amp; Fire Features</a>
+                        <a href="../../services/patios-outdoor-living.html">Patios &amp; Walkways (Porcelain, Pavers, Natural Stone)</a>
+                        <a href="../../services/steps-elevation.html">Steps, Retaining Walls &amp; Grade Transitions</a>
+                        <a href="../../services/poolside-hardscape.html">Swimming Pools &amp; Spas</a>
+                        <a href="backyard-transformations.html">Complete Outdoor Living Spaces</a>
+                        <div class="dropdown-group-decking">
+                            <span class="dropdown-group-label">Decking</span>
+                            <a href="decks.html">Composite &amp; PVC Decks</a>
+                        </div>
+                    </div>
+                </div>
                 <a href="../process.html">Our Process</a>
                 <a href="../about.html">About</a>
                 <div class="nav-dropdown">
@@ -90,13 +128,22 @@
                         <a href="../../investment-levels.html">Investment Levels</a>
                     </div>
                 </div>
-                <a href="../../investment-levels.html" class="btn btn-outline" aria-label="Explore investment ranges">Explore Investment Ranges</a>
-                <a href="../../contact.html" class="btn">Start Your Design Conversation</a>
+                <a href="../../resources/project-cost-estimator.html#estimator" class="btn btn-outline" aria-label="Project Cost Calculator">Project Cost Calculator</a>
+                <a href="../../contact.html" class="btn">Request a Consultation</a>
             </nav>
 
             <div class="mobile-menu-overlay">
-                <a href="../../index.html#services"
-                    onclick="document.querySelector('.mobile-menu-overlay').classList.remove('active')">Services</a>
+                <span class="mobile-menu-label">Design</span>
+                <a href="landscape-design.html" onclick="document.querySelector('.mobile-menu-overlay').classList.remove('active')">Professional Landscape Design (2D &amp; 3D)</a>
+                <span class="mobile-menu-label">Outdoor Living &amp; Hardscape</span>
+                <a href="../../services/backyard-projects.html" onclick="document.querySelector('.mobile-menu-overlay').classList.remove('active')">Outdoor Kitchens &amp; Cooking Areas</a>
+                <a href="../../services/fire-pits-fire-features.html" onclick="document.querySelector('.mobile-menu-overlay').classList.remove('active')">Fire Pits &amp; Fire Features</a>
+                <a href="../../services/patios-outdoor-living.html" onclick="document.querySelector('.mobile-menu-overlay').classList.remove('active')">Patios &amp; Walkways</a>
+                <a href="../../services/steps-elevation.html" onclick="document.querySelector('.mobile-menu-overlay').classList.remove('active')">Steps, Retaining Walls &amp; Grade Transitions</a>
+                <a href="../../services/poolside-hardscape.html" onclick="document.querySelector('.mobile-menu-overlay').classList.remove('active')">Swimming Pools &amp; Spas</a>
+                <a href="backyard-transformations.html" onclick="document.querySelector('.mobile-menu-overlay').classList.remove('active')">Complete Outdoor Living Spaces</a>
+                <span class="mobile-menu-label mobile-menu-label-decking">Decking</span>
+                <a href="decks.html" onclick="document.querySelector('.mobile-menu-overlay').classList.remove('active')">Composite &amp; PVC Decks</a>
                 <a href="../process.html">Our Process</a>
                 <a href="../about.html">About</a>
                 <div class="mobile-dropdown-menu">
@@ -122,29 +169,11 @@
                         </svg>
                     </a>
                 </div>
-                <a href="../../investment-levels.html" class="btn btn-outline btn-large" aria-label="Explore investment ranges">Explore Investment Ranges</a>
-                <a href="../../contact.html" class="btn btn-large">Start Your Design Conversation</a>
+                <a href="../../resources/project-cost-estimator.html#estimator" class="btn btn-outline btn-large" aria-label="Project Cost Calculator">Project Cost Calculator</a>
+                <a href="../../contact.html" class="btn btn-large">Request a Consultation</a>
             </div>
 
-            <div class="social-nav header-social">
-                <a href="https://www.instagram.com/goldenmaplelandscaping.ca" target="_blank" class="icon-link"
-                    aria-label="Instagram">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="icon-social">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
-                </a>
-                <a href="https://www.facebook.com/GoldenMaplegroup/" target="_blank" class="icon-link"
-                    aria-label="Facebook">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="icon-social">
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                    </svg>
-                </a>
             </div>
-        </div>
     </header>
 
     <!-- Service Hero -->
@@ -175,13 +204,12 @@
                         <h3 class="text-gold" style="font-size: 1.25rem;">Our Approach</h3>
                         <p>We build patios on engineered gravel bases designed to survive Ontario's freeze-thaw cycles.
                         </p>
-                        <p>Precision is our standard. No shortcuts on base preparation.</p>
+                        <p>Precision is our standard. No shortcuts on base preparation. For <a href="../../interlock-patio-barrie.html">interlock patio installation in Barrie</a>, we offer dedicated service tailored to local conditions.</p>
                     </div>
 
                     <div class="bg-secondary accent-box">
-                        <h3 class="fallback-subtitle mb-1">5-Year Workmanship Warranty</h3>
-                        <p class="text-secondary mb-0">Backed by our 5-year installation warranty and pass-through
-                            manufacturer warranties on all materials.</p>
+                        <h3 class="fallback-subtitle mb-1">Industry-Leading Workmanship Warranty</h3>
+                        <p class="text-secondary mb-0">Our projects are backed by an up to 10-year workmanship warranty, depending on the build tier selected. Higher tiers include enhanced construction methods, materials, and long-term performance standards. Manufacturer warranties on materials are fully passed on to you.</p>
                     </div>
 
                     <div style="margin-top: 2rem;">
@@ -199,10 +227,77 @@
 
             <div class="warranty-box">
                 <p>
-                    All hardscape work includes a 5-year workmanship warranty, plus extended manufacturer warranties
+                    All work is backed by our up to 10-year workmanship warranty (by build tier), plus extended manufacturer warranties
                     passed on to clients.
                 </p>
             </div>
+
+            <h2 class="section-title" style="margin-top: 2.5rem;">Typical Investment</h2>
+            <p>
+                Every project is unique, but most professionally designed and constructed outdoor living spaces fall within the following ranges:
+            </p>
+            <ul style="margin: 1rem 0 1.5rem 1.5rem; list-style: disc;">
+                <li>Front entrance &amp; steps: $12,000 – $30,000+</li>
+                <li>Patios &amp; outdoor living areas: $20,000 – $80,000+</li>
+                <li>Full backyard transformations: $60,000 – $150,000+</li>
+            </ul>
+            <p>
+                Final costs depend on site conditions, materials, access, and design complexity.
+            </p>
+            <p>
+                We guide you through options that align with your goals and investment comfort.
+            </p>
+
+            <h2 class="section-title" style="margin-top: 2.5rem;">What a Professional Outdoor Project Includes</h2>
+            <p>
+                Professional outdoor construction involves far more than surface materials.
+            </p>
+            <p>Our projects include:</p>
+            <ul style="margin: 1rem 0 1.5rem 1.5rem; list-style: disc;">
+                <li>utility locates &amp; planning coordination</li>
+                <li>excavation &amp; structural base preparation</li>
+                <li>drainage solutions for long-term stability</li>
+                <li>precision installation methods</li>
+                <li>site protection &amp; thorough cleanup</li>
+            </ul>
+            <p>
+                This ensures your outdoor space performs beautifully for years to come.
+            </p>
+
+            <h2 class="section-title" style="margin-top: 2.5rem;">What to Expect</h2>
+            <p>
+                Outdoor projects require thoughtful planning to ensure lasting results.
+            </p>
+            <p>Typical timelines include:</p>
+            <ul style="margin: 1rem 0 1.5rem 1.5rem; list-style: disc;">
+                <li>Planning &amp; design: 2–4 weeks</li>
+                <li>Scheduling &amp; material coordination: varies seasonally</li>
+                <li>Construction: 1–3 weeks depending on scope</li>
+            </ul>
+            <p>
+                We communicate clearly throughout the process so you always know what to expect.
+            </p>
+
+            <h2 class="section-title" style="margin-top: 2.5rem;">Solving Common Outdoor Challenges</h2>
+            <p>
+                If you're experiencing:
+            </p>
+            <ul style="margin: 1rem 0 1rem 1.5rem; list-style: disc;">
+                <li>water pooling near your home</li>
+                <li>shifting or sinking patios</li>
+                <li>unsafe or uneven steps</li>
+                <li>unusable slopes or poor drainage</li>
+            </ul>
+            <p>We provide solutions including:</p>
+            <ul style="margin: 1rem 0 1.5rem 1.5rem; list-style: disc;">
+                <li>proper drainage and grading</li>
+                <li>engineered base preparation</li>
+                <li>structural wall systems</li>
+                <li>reconfiguration for safety and usability</li>
+            </ul>
+            <p>
+                Our goal is to solve the underlying issues — not just cover them.
+            </p>
         </div>
     </section>
 
@@ -290,7 +385,7 @@
                 Start with a structured project intake so we can understand your goals, timeline, and vision before
                 moving forward.
             </p>
-            <a href="../../contact.html" class="btn">Start Your Design Conversation</a>
+            <a href="../../contact.html" class="btn">Request a Consultation</a>
         </div>
     </section>
 

@@ -46,6 +46,12 @@
 </head>
 
 <body>
+    <!-- Urgency Bar -->
+    <div id="gm-urgency-bar" class="gm-urgency-bar">
+        <a href="../contact.html#gm-contact-section">Now Booking Spring &amp; Summer Projects — Limited Construction Schedule Available</a>
+        <button type="button" class="gm-urgency-bar-close" aria-label="Dismiss">✕</button>
+    </div>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NWMC6M9P" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
@@ -54,10 +60,42 @@
         <div class="container nav-container">
             <a href="../index.html" class="logo">Golden Maple <span class="text-gold">Landscaping</span></a>
 
-            <div class="mobile-toggle">&#9776;</div>
+            
+
+                        <!-- Anti-Gravity Header Controls (FAB) -->
+            <div class="header-actions-fab">
+                <a href="tel:7055003581" class="fab-phone" aria-label="Call Now">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                </a>
+                <div class="mobile-toggle-ag" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                </div>
+            </div>
 
             <nav class="desktop-nav">
-                <a href="../index.html#services">Services</a>
+                <div class="nav-dropdown">
+                    <a href="../index.html#services">Services ▾</a>
+                    <div class="dropdown-menu dropdown-services">
+                        <span class="dropdown-group-label">Design</span>
+                        <a href="services/landscape-design.html">Professional Landscape Design (2D &amp; 3D)</a>
+                        <span class="dropdown-group-label">Outdoor Living &amp; Hardscape</span>
+                        <a href="../services/backyard-projects.html">Outdoor Kitchens &amp; Cooking Areas</a>
+                        <a href="../services/fire-pits-fire-features.html">Fire Pits &amp; Fire Features</a>
+                        <a href="../services/patios-outdoor-living.html">Patios &amp; Walkways (Porcelain, Pavers, Natural Stone)</a>
+                        <a href="../services/steps-elevation.html">Steps, Retaining Walls &amp; Grade Transitions</a>
+                        <a href="../services/poolside-hardscape.html">Swimming Pools &amp; Spas</a>
+                        <a href="services/backyard-transformations.html">Complete Outdoor Living Spaces</a>
+                        <div class="dropdown-group-decking">
+                            <span class="dropdown-group-label">Decking</span>
+                            <a href="services/decks.html">Composite &amp; PVC Decks</a>
+                        </div>
+                    </div>
+                </div>
                 <a href="process.html" class="active">Our Process</a>
                 <a href="about.html">About</a>
                 <div class="nav-dropdown">
@@ -65,62 +103,31 @@
                     <div class="dropdown-menu">
                         <a href="../resources.html">Blog / Guides</a>
                         <a href="gallery.html">Project Gallery</a>
+                        <a href="../resources/project-cost-estimator.html">Project Cost Calculator</a>
                         <a href="../investment-levels.html">Investment Levels</a>
                     </div>
                 </div>
-                <a href="../investment-levels.html" class="btn btn-outline" aria-label="Explore investment ranges">Explore Investment Ranges</a>
-                <a href="../contact.html" class="btn">Start Your Design Conversation</a>
+                <a href="../resources/project-cost-estimator.html#estimator" class="btn btn-outline" aria-label="Project Cost Calculator">Project Cost Calculator</a>
+                <a href="../contact.html" class="btn">Request a Consultation</a>
             </nav>
 
-            <div class="social-nav header-social">
-                <a href="https://www.instagram.com/goldenmaplelandscaping.ca" target="_blank" class="icon-link"
-                    aria-label="Instagram">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="icon-social">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
-                </a>
-                <a href="https://www.facebook.com/GoldenMaplegroup/" target="_blank" class="icon-link"
-                    aria-label="Facebook">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="icon-social">
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                    </svg>
-                </a>
             </div>
-
-            <div class="mobile-menu-overlay">
-                <a href="../index.html#services"
-                    onclick="document.querySelector('.mobile-menu-overlay').classList.remove('active')">Services</a>
-                <a href="process.html">Our Process</a>
-                <a href="about.html">About</a>
-                <div class="mobile-dropdown-menu">
-                    <a href="../resources.html" class="text-gold">Blog / Guides</a>
-                    <a href="gallery.html">Project Gallery</a>
-                    <a href="../investment-levels.html">Investment Levels</a>
-                </div>
-                <div class="mobile-drawer-social">
-                    <a href="https://www.instagram.com/goldenmaplelandscaping.ca" target="_blank" class="icon-link"
-                        aria-label="Instagram">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="icon-social">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                        </svg>
-                    </a>
-                    <a href="https://www.facebook.com/GoldenMaplegroup/" target="_blank" class="icon-link"
-                        aria-label="Facebook">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="icon-social">
-                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                        </svg>
-                    </a>
-                </div>
-                <a href="../investment-levels.html" class="btn btn-outline btn-large" aria-label="Explore investment ranges">Explore Investment Ranges</a>
-                <a href="../contact.html" class="btn btn-large">Start Your Design Conversation</a>
+                    <a href="process.html" class="mobile-nav-item mobile-nav-link" data-close-menu>Our Process</a>
+                    <a href="about.html" class="mobile-nav-item mobile-nav-link" data-close-menu>About</a>
+                    <a href="../resources.html" class="mobile-nav-item mobile-nav-link" data-close-menu>Resources</a>
+                    <a href="../resources/project-cost-estimator.html#estimator" class="mobile-nav-item mobile-nav-link mobile-nav-cta" data-close-menu aria-label="Project Cost Calculator">Project Cost Calculator</a>
+                    <div class="mobile-nav-footer">
+                        <div class="mobile-drawer-social">
+                            <a href="https://www.instagram.com/goldenmaplelandscaping.ca" target="_blank" class="icon-link" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-social"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="https://www.facebook.com/GoldenMaplegroup/" target="_blank" class="icon-link" aria-label="Facebook">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-social"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            </a>
+                        </div>
+                        <a href="../contact.html" class="btn btn-large mobile-nav-contact-cta" data-close-menu>Request a Consultation</a>
+                    </div>
+                </nav>
             </div>
         </div>
     </header>
@@ -136,6 +143,32 @@
     </section>
 
     <section class="section">
+        <div class="container">
+            <div class="grid grid-2" style="align-items: center; gap: 3rem; max-width: 1100px; margin: 0 auto;">
+                <div>
+                    <h2 class="section-title">Why Planning Comes First</h2>
+                    <p>
+                        Successful outdoor construction begins long before installation.
+                    </p>
+                    <p>Proper planning allows us to:</p>
+                    <ul style="margin: 1rem 0 1.5rem 1.5rem; list-style: disc;">
+                        <li>evaluate drainage and grading requirements</li>
+                        <li>ensure structural stability and longevity</li>
+                        <li>select materials suited to your property</li>
+                        <li>prevent costly changes during construction</li>
+                    </ul>
+                    <p>
+                        This approach ensures a smoother experience and a finished space built to perform.
+                    </p>
+                </div>
+                <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+                    <img src="../New website pictures 2026 revised/IMG_4826.jpg" alt="Planned patio installation" style="width: 100%; height: auto; display: block;" loading="lazy" decoding="async">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
         <div class="container" style="max-width: 900px;">
 
             <div class="step-card">
@@ -143,7 +176,14 @@
                 <h2>Getting to Know Your Project</h2>
                 <p>We start by learning a bit about your project through a short form.</p>
                 <p>This helps us understand your goals and make sure we’re the right team before moving forward.</p>
+                <img src="../New website pictures 2026 revised/good.JPG" alt="Outdoor space ready for transformation" style="width: 100%; max-width: 500px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); margin-top: 1.5rem;" loading="lazy" decoding="async">
             </div>
+
+            <p style="margin: 1.5rem 0; font-size: 0.95rem; padding: 1rem; background: rgba(184, 155, 94, 0.05); border-radius: 6px;">
+                <strong>Exploring realistic project costs?</strong> Use our 
+                <a href="../resources/project-cost-estimator.html" style="color: var(--gm-gold); text-decoration: underline; font-weight: 600;">Project Cost Calculator</a>
+                to get a ballpark range before your consultation.
+            </p>
 
             <div class="bg-secondary accent-box">
                 <h3 class="mb-1">Clear Planning & Accountability</h3>
@@ -151,6 +191,10 @@
                 <p>From planning through construction, we stay aligned on materials, scope, and execution.</p>
                 <p>We intentionally limit the number of projects we take on so each one receives proper attention.</p>
             </div>
+
+            <p style="margin: 1.5rem 0; font-size: 0.95rem; padding: 1rem; background: rgba(184, 155, 94, 0.05); border-radius: 6px;">
+                <strong>Industry-Leading Workmanship Warranty.</strong> Our projects are backed by a workmanship warranty of up to 10 years, depending on the build tier selected. Higher tiers include enhanced construction methods, materials, and long-term performance standards.
+            </p>
 
             <section class="section">
                 <div class="container" style="max-width: 900px;">
@@ -165,6 +209,7 @@
                 <span class="step-number">02</span>
                 <h2>Planning the Details</h2>
                 <p>Every project goes through a planning stage so the work is clear before construction starts.</p>
+                <img src="../New website pictures 2026 revised/patio-pergola.png" alt="Completed patio and pergola project" style="width: 100%; max-width: 500px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); margin-top: 1.5rem;" loading="lazy" decoding="async">
             </div>
 
             <div class="process-step">
@@ -179,7 +224,7 @@
                 <h2>Building the Project</h2>
                 <p>Our crew builds according to the approved plan, with attention to detail at every step.</p>
                 <p>We keep you informed as the project progresses so you always know where things stand.</p>
-                <img src="../New website pictures 2026 revised/outdoor-retreat.JPEG"
+                <img src="../New website pictures 2026 revised/best.JPEG"
                     alt="Ongoing landscape construction project"
                     style="width: 100%; height: auto; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-top: 1.5rem;"
                     loading="lazy" decoding="async">
@@ -188,18 +233,50 @@
         </div>
     </section>
 
+    <section class="section bg-light">
+        <div class="container">
+            <div class="grid grid-2" style="align-items: center; gap: 3rem; max-width: 1100px; margin: 0 auto;">
+                <div>
+                    <h2 class="section-title">After You Reach Out</h2>
+                    <p>
+                        Once we receive your inquiry:
+                    </p>
+                    <ol style="margin: 1rem 0 1.5rem 1.5rem; padding-left: 1.5rem;">
+                        <li>We review your project details.</li>
+                        <li>We contact you to discuss your goals and timeline.</li>
+                        <li>If appropriate, we schedule a site consultation.</li>
+                        <li>We provide planning recommendations and next steps.</li>
+                    </ol>
+                    <p>
+                        Our process is designed to be clear, professional, and respectful of your time.
+                    </p>
+                </div>
+                <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+                    <img src="../New website pictures 2026 revised/paver-driveway.JPG" alt="Completed hardscape project" style="width: 100%; height: auto; display: block;" loading="lazy" decoding="async">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="section">
-        <div class="container" style="max-width: 900px;">
-            <h2 style="font-size: 1.75rem; margin-bottom: 1rem;">Final Walkthrough</h2>
-            <p>At the end of the project, we review the work to make sure everything has been completed as planned.</p>
-            <p>This final check ensures a smooth handoff and a finished space you can enjoy with confidence.</p>
+        <div class="container">
+            <div class="grid grid-2" style="align-items: center; gap: 3rem; max-width: 1100px; margin: 0 auto;">
+                <div class="text-first-mobile" style="order: 2;">
+                    <h2 style="font-size: 1.75rem; margin-bottom: 1rem;">Final Walkthrough</h2>
+                    <p>At the end of the project, we review the work to make sure everything has been completed as planned.</p>
+                    <p>This final check ensures a smooth handoff and a finished space you can enjoy with confidence.</p>
+                </div>
+                <div class="img-first-mobile" style="order: 1; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+                    <img src="../New website pictures 2026 revised/Golden Maple deck and walkway.jpg" alt="Final project walkthrough" style="width: 100%; height: auto; display: block;" loading="lazy" decoding="async">
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="section bg-secondary text-center">
         <div class="container">
             <h2>Thinking About a Project?</h2>
-            <a href="../contact.html" class="btn mt-2">Tell Us About Your Project</a>
+            <a href="../contact.html" class="btn mt-2">Request a Consultation</a>
         </div>
     </section>
 
@@ -247,6 +324,13 @@
         </div>
         <div class="footer-bottom">
             <div class="container">
+                <p class="footer-trust" style="font-size: 0.9rem; margin-bottom: 0.75rem; opacity: 0.9;">
+                    ✔ Up to 10-Year Workmanship Warranty (by build tier)<br>
+                    ✔ Fully Insured &amp; WSIB Compliant<br>
+                    ✔ Built for Ontario's Climate<br>
+                    ✔ Serving Barrie &amp; Simcoe County
+                </p>
+                <p class="text-center" style="font-size: 0.85rem; color: rgba(246,244,239,0.7); margin-top: 0.5rem;">Built for Ontario's freeze–thaw climate and long-term durability.</p>
                 <p>&copy; 2026 Golden Maple Landscaping. All rights reserved.</p>
             </div>
         </div>

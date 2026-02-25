@@ -30,7 +30,13 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
+<body class="about-page">
+    <!-- Urgency Bar -->
+    <div id="gm-urgency-bar" class="gm-urgency-bar">
+        <a href="../contact.html#gm-contact-section">Now Booking Spring &amp; Summer Projects — Limited Construction Schedule Available</a>
+        <button type="button" class="gm-urgency-bar-close" aria-label="Dismiss">✕</button>
+    </div>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NWMC6M9P" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
@@ -40,10 +46,42 @@
         <div class="container nav-container">
             <a href="../index.html" class="logo">Golden Maple <span class="text-gold">Landscaping</span></a>
 
-            <div class="mobile-toggle">&#9776;</div>
+            
+
+                        <!-- Anti-Gravity Header Controls (FAB) -->
+            <div class="header-actions-fab">
+                <a href="tel:7055003581" class="fab-phone" aria-label="Call Now">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                </a>
+                <div class="mobile-toggle-ag" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                </div>
+            </div>
 
             <nav class="desktop-nav">
-                <a href="../index.html#services">Services</a>
+                <div class="nav-dropdown">
+                    <a href="../index.html#services">Services ▾</a>
+                    <div class="dropdown-menu dropdown-services">
+                        <span class="dropdown-group-label">Design</span>
+                        <a href="services/landscape-design.html">Professional Landscape Design (2D &amp; 3D)</a>
+                        <span class="dropdown-group-label">Outdoor Living &amp; Hardscape</span>
+                        <a href="../services/backyard-projects.html">Outdoor Kitchens &amp; Cooking Areas</a>
+                        <a href="../services/fire-pits-fire-features.html">Fire Pits &amp; Fire Features</a>
+                        <a href="../services/patios-outdoor-living.html">Patios &amp; Walkways (Porcelain, Pavers, Natural Stone)</a>
+                        <a href="../services/steps-elevation.html">Steps, Retaining Walls &amp; Grade Transitions</a>
+                        <a href="../services/poolside-hardscape.html">Swimming Pools &amp; Spas</a>
+                        <a href="services/backyard-transformations.html">Complete Outdoor Living Spaces</a>
+                        <div class="dropdown-group-decking">
+                            <span class="dropdown-group-label">Decking</span>
+                            <a href="services/decks.html">Composite &amp; PVC Decks</a>
+                        </div>
+                    </div>
+                </div>
                 <a href="process.html">Our Process</a>
                 <a href="about.html">About</a>
                 <div class="nav-dropdown">
@@ -54,59 +92,27 @@
                         <a href="../investment-levels.html">Investment Levels</a>
                     </div>
                 </div>
-                <a href="../investment-levels.html" class="btn btn-outline" aria-label="Explore investment ranges">Explore Investment Ranges</a>
-                <a href="../contact.html" class="btn">Start Your Design Conversation</a>
+                <a href="../resources/project-cost-estimator.html#estimator" class="btn btn-outline" aria-label="Project Cost Calculator">Project Cost Calculator</a>
+                <a href="../contact.html" class="btn">Request a Consultation</a>
             </nav>
 
-            <div class="social-nav header-social">
-                <a href="https://www.instagram.com/goldenmaplelandscaping.ca" target="_blank" class="icon-link"
-                    aria-label="Instagram">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="icon-social">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
-                </a>
-                <a href="https://www.facebook.com/GoldenMaplegroup/" target="_blank" class="icon-link"
-                    aria-label="Facebook">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="icon-social">
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                    </svg>
-                </a>
             </div>
-
-            <div class="mobile-menu-overlay">
-                <a href="../index.html#services"
-                    onclick="document.querySelector('.mobile-menu-overlay').classList.remove('active')">Services</a>
-                <a href="process.html">Our Process</a>
-                <a href="about.html">About</a>
-                <div class="mobile-dropdown-menu">
-                    <a href="../resources.html" class="text-gold">Blog / Guides</a>
-                    <a href="gallery.html">Project Gallery</a>
-                    <a href="../investment-levels.html">Investment Levels</a>
-                </div>
-                <div class="mobile-drawer-social">
-                    <a href="https://www.instagram.com/goldenmaplelandscaping.ca" target="_blank" class="icon-link"
-                        aria-label="Instagram">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="icon-social">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                        </svg>
-                    </a>
-                    <a href="https://www.facebook.com/GoldenMaplegroup/" target="_blank" class="icon-link"
-                        aria-label="Facebook">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="icon-social">
-                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                        </svg>
-                    </a>
-                </div>
-                <a href="../investment-levels.html" class="btn btn-outline btn-large" aria-label="Explore investment ranges">Explore Investment Ranges</a>
-                <a href="../contact.html" class="btn btn-large">Start Your Design Conversation</a>
+                    <a href="process.html" class="mobile-nav-item mobile-nav-link" data-close-menu>Our Process</a>
+                    <a href="about.html" class="mobile-nav-item mobile-nav-link" data-close-menu>About</a>
+                    <a href="../resources.html" class="mobile-nav-item mobile-nav-link" data-close-menu>Resources</a>
+                    <a href="../resources/project-cost-estimator.html#estimator" class="mobile-nav-item mobile-nav-link mobile-nav-cta" data-close-menu aria-label="Project Cost Calculator">Project Cost Calculator</a>
+                    <div class="mobile-nav-footer">
+                        <div class="mobile-drawer-social">
+                            <a href="https://www.instagram.com/goldenmaplelandscaping.ca" target="_blank" class="icon-link" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-social"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="https://www.facebook.com/GoldenMaplegroup/" target="_blank" class="icon-link" aria-label="Facebook">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-social"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            </a>
+                        </div>
+                        <a href="../contact.html" class="btn btn-large mobile-nav-contact-cta" data-close-menu>Request a Consultation</a>
+                    </div>
+                </nav>
             </div>
         </div>
     </header>
@@ -118,6 +124,56 @@
                 We plan and build outdoor spaces with care, attention to detail, and long-term durability in mind. Our
                 focus is simple — do the work properly and build things that last.
             </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-2" style="align-items: center; gap: 3rem;">
+                <div class="text-first-mobile" style="order: 2;">
+                    <h2 class="section-title">Built on Craftsmanship, Integrity, and Pride in Every Detail</h2>
+                    <p>
+                        Golden Maple Landscaping was founded on the belief that outdoor spaces should be built with the same care and attention as the homes they surround.
+                    </p>
+                    <p>
+                        Owner-operator Yorkis personally oversees each project to ensure the highest standards of craftsmanship, communication, and client experience.
+                    </p>
+                    <p>
+                        With a background rooted in hands-on construction and a commitment to continuous improvement, Yorkis approaches every project with precision, accountability, and pride in the finished result.
+                    </p>
+                    <p>
+                        For us, this work is more than construction — it is about creating spaces families enjoy for years to come.
+                    </p>
+                </div>
+                <div class="img-first-mobile" style="order: 1; text-align: center;">
+                    <img src="../New website pictures 2026 revised/yorkis.jpg"
+                        alt="Yorkis - Golden Maple Landscaping Builder" class="builder-profile-img yorkis-portrait" loading="lazy"
+                        decoding="async">
+                    <p class="mt-1 font-bold text-secondary">Yorkis — Project Builder</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-light">
+        <div class="container">
+            <div class="grid grid-2" style="align-items: center; gap: 3rem;">
+                <div class="text-first-mobile" style="order: 2;">
+                    <h2 class="section-title">Why We Do This Work</h2>
+                    <p>
+                        A thoughtfully designed outdoor space becomes part of everyday life — where families gather, children play, and memories are made.
+                    </p>
+                    <p>
+                        We take pride in building spaces that feel welcoming, functional, and enduring.
+                    </p>
+                    <p>
+                        Because when a space is built properly, it serves families for decades.
+                    </p>
+                </div>
+                <div class="img-first-mobile" style="order: 1; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+                    <img src="../New website pictures 2026 revised/orillia-walkway.png" alt="Family backyard transformation" style="width: 100%; height: auto; display: block;" loading="lazy" decoding="async">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -140,11 +196,9 @@
                     </p>
                     <h2 class="section-title">Our Work, <span class="text-gold">Backed by Warranty</span></h2>
                     <div class="bg-secondary accent-box">
-                        <h3 class="mb-1">Our Work, Backed by Warranty</h3>
-                        <p>We stand behind our work. All hardscape and structural projects include a 5-year workmanship
-                            warranty covering installation and craftsmanship.</p>
-                        <p>Manufacturer warranties on materials are also passed directly to you, providing additional
-                            long-term coverage.</p>
+                        <h3 class="mb-1">Our Workmanship Warranty</h3>
+                        <p>We stand behind the quality of our work. Depending on the scope and construction tier of your project, our workmanship warranty is up to 10 years.</p>
+                        <p>Warranty coverage is aligned with the level of planning, materials, and construction approach selected, and is clearly outlined as part of the design and build process.</p>
                     </div>
                     <h3 style="margin-top: 2rem;">What Matters to Us</h3>
                     <ul style="list-style: none; margin-left: 0; margin-top: 1rem;">
@@ -177,16 +231,8 @@
                     <a href="../contact.html" class="btn" style="margin-top: 2rem;">Let’s Talk About Your Project</a>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 2rem;">
-                    <div class="text-center">
-                        <img src="../New website pictures 2026 revised/Selfie-website.jpg"
-                            alt="Yorkis - Golden Maple Landscaping Builder" class="builder-profile-img" loading="lazy"
-                            decoding="async">
-                        <p class="mt-1 font-bold text-secondary">Yorkis — Project Builder</p>
-                    </div>
-                    <div style="border-radius: 4px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                        <img src="../New website pictures 2026 revised/IMG_3743.jpg"
-                            alt="Completed landscape project detail" style="width: 100%; height: auto; display: block;"
-                            loading="lazy" decoding="async">
+                    <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+                        <img src="../New website pictures 2026 revised/ABQI9355.JPEG" alt="Outdoor kitchen and patio project" style="width: 100%; height: auto; display: block;" loading="lazy" decoding="async">
                     </div>
                 </div>
             </div>
@@ -199,13 +245,12 @@
             <div class="footer-block">
                 <h3>Golden Maple Landscaping</h3>
                 <p>Design-build services including patios, steps, retaining walls, decks, outdoor lighting, drainage,
-                    artificial turf,`r`n and full backyard transformations.</p>
+                    artificial turf, and full backyard transformations.</p>
             </div>
             <div class="footer-block">
                 <h3>Service Area</h3>
-                <p>Proudly serving homeowners across Barrie, Simcoe County, and surrounding regions — including Muskoka
-                    and cottage country.
-                    We take on select projects outside our core area when scope, timeline, and fit align.</p>
+                <p>Proudly serving homeowners across Simcoe County and surrounding areas — including Barrie, Muskoka, and nearby communities.
+                    Every project begins with clear communication, honest guidance, and craftsmanship built for Canadian seasons.</p>
                 <a href="../service-areas.html" class="footer-link">Service Areas</a>
             </div>
             <div class="footer-block footer-contact">
@@ -237,6 +282,13 @@
         </div>
         <div class="footer-bottom">
             <div class="container">
+                <p class="footer-trust" style="font-size: 0.9rem; margin-bottom: 0.75rem; opacity: 0.9;">
+                    ✔ Up to 10-Year Workmanship Warranty (by build tier)<br>
+                    ✔ Fully Insured &amp; WSIB Compliant<br>
+                    ✔ Built for Ontario's Climate<br>
+                    ✔ Serving Barrie &amp; Simcoe County
+                </p>
+                <p class="text-center" style="font-size: 0.85rem; color: rgba(246,244,239,0.7); margin-top: 0.5rem;">Built for Ontario's freeze–thaw climate and long-term durability.</p>
                 <p>&copy; 2026 Golden Maple Landscaping. All rights reserved.</p>
             </div>
         </div>

@@ -1,2 +1,28 @@
 [build]
   publish = "."
+
+# Form notifications: submission-created.js sends estimator/contact submissions to
+# Yorkis@goldenmaplelandscaping.ca. To avoid duplicate emails, disable the built-in
+# "Email" form notification in Netlify UI (Project configuration > Notifications >
+# Form submission notifications).
+
+# ------------------------------------------------------------------------------
+# Legacy domain: goldenmaplegroup.com → goldenmaplelandscaping.ca (GLOBAL 301)
+# ------------------------------------------------------------------------------
+# ANY path, query string, trailing slash, or casing on the legacy domain
+# redirects to the new site home page. Place these first so they take precedence.
+# ------------------------------------------------------------------------------
+
+[[redirects]]
+  from = "/*"
+  to = "https://goldenmaplelandscaping.ca/"
+  status = 301
+  force = true
+  conditions = {Host = "goldenmaplegroup.com"}
+
+[[redirects]]
+  from = "/*"
+  to = "https://goldenmaplelandscaping.ca/"
+  status = 301
+  force = true
+  conditions = {Host = "www.goldenmaplegroup.com"}

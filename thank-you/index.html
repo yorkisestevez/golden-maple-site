@@ -29,47 +29,200 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
+    <style>
+        body {
+            line-height: 1.6;
+        }
+
+        .thankyou-page {
+            max-width: 720px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .hero-subtext {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .hero-reassurance {
+            opacity: .75;
+            margin-top: 6px;
+        }
+
+        .thankyou-feature-image img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 30px 0 20px 0;
+            display: block;
+        }
+
+        .owner-message {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin: 30px 0;
+        }
+
+        .owner-message img {
+            width: 108px;
+            height: 108px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 14%;
+        }
+
+        .owner-message img.yorkis-portrait {
+            mix-blend-mode: normal;
+            opacity: 1;
+            background: transparent;
+            filter: contrast(1.06) saturate(1.03);
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
+
+        .next-steps {
+            margin-top: 10px;
+            line-height: 1.7;
+            padding-left: 18px;
+        }
+
+        .trust-block {
+            margin-top: 24px;
+            line-height: 1.6;
+            opacity: .9;
+        }
+
+        .trust-block ul {
+            padding-left: 18px;
+        }
+
+        .thankyou-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 30px 0;
+        }
+
+        .thankyou-gallery img {
+            width: 100%;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .booking-note {
+            opacity: .75;
+            margin-bottom: 12px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 8px;
+            background: #b89b5e;
+            color: #111;
+            text-decoration: none;
+            font-weight: 600;
+            min-height: 48px;
+            line-height: 1.3;
+        }
+
+        @media (max-width: 768px) {
+            .owner-message {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .thankyou-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-button {
+                display: block;
+                width: 100%;
+                max-width: 420px;
+                margin: 0 auto;
+                text-align: center;
+                padding: 14px 18px;
+                font-weight: 700;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Urgency Bar -->
+    <div id="gm-urgency-bar" class="gm-urgency-bar">
+        <a href="../contact.html#gm-contact-section">Now Booking Spring &amp; Summer Projects — Limited Construction Schedule Available</a>
+        <button type="button" class="gm-urgency-bar-close" aria-label="Dismiss">✕</button>
+    </div>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NWMC6M9P" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <section class="section bg-dark">
-        <div class="container">
-            <h1 class="text-white">Thanks — we’ve got your message</h1>
-            <p class="text-white" style="max-width: 640px; opacity: 0.9;">
-                We appreciate you reaching out. We’ll take a look at the details you shared and follow up shortly.
+        <div class="container thankyou-page">
+            <h1 class="text-white">Your Project Is In Good Hands</h1>
+            <p class="hero-subtext text-white">
+                We received your details and are excited to learn more about your space.
+            </p>
+            <p class="hero-reassurance text-white">
+                Thank you for reaching out to Golden Maple Landscaping.
             </p>
         </div>
     </section>
 
     <section class="section">
-        <div class="container" style="max-width: 720px;">
-            <p>
-                If it looks like a good fit, someone from our team will reach out to talk through next steps and answer any questions.
-            </p>
-            <div style="margin-top: 2rem;">
-                <a href="/index.html" class="btn">Back to Home</a>
+        <div class="thankyou-page">
+            <div class="thankyou-feature-image">
+                <img src="/New website pictures 2026 revised/pool-deck-ideas.JPEG" alt="Luxury outdoor living space at dusk">
             </div>
+
+            <div class="owner-message">
+                <img src="/New website pictures 2026 revised/yorkis.jpg" alt="Yorkis, owner of Golden Maple Landscaping" class="yorkis-portrait">
+                <div>
+                    <h3>Hi, I’m Yorkis.</h3>
+                    <p>
+                        I personally review every project submission to ensure we’re the right fit and that your space gets the attention it deserves.
+                    </p>
+                </div>
+            </div>
+
+            <h3>What happens next</h3>
+            <ul class="next-steps">
+                <li>We carefully review your project details</li>
+                <li>You’ll receive your planning guide by email</li>
+                <li>We follow up if clarification helps move things forward</li>
+            </ul>
+
+            <div class="trust-block">
+                <p><strong>Why homeowners choose Golden Maple</strong></p>
+                <ul>
+                    <li>Owner-built & personally overseen</li>
+                    <li>Built for Canadian seasons</li>
+                    <li>Clean, respectful job sites</li>
+                    <li>5-year craftsmanship warranty</li>
+                </ul>
+            </div>
+
+            <div class="thankyou-gallery">
+                <img src="/New website pictures 2026 revised/patio-pergola.png" alt="Evening patio with lighting">
+                <img src="/New website pictures 2026 revised/garden-wall.JPEG" alt="Premium natural stone steps">
+                <img src="/New website pictures 2026 revised/best.JPEG" alt="Backyard outdoor living space">
+            </div>
+
+            <h3>Want to explore ideas sooner?</h3>
+            <p class="booking-note">
+                No pressure. Just helpful guidance and professional insight.
+            </p>
+
+            <a href="/book-call" class="cta-button">
+                Book Your Free Design Call
+            </a>
         </div>
     </section>
-<div id="gm-chat-widget">
-    <button id="gm-chat-toggle" type="button" aria-expanded="false" aria-controls="gm-chat-panel">
-        Ask About Our Process
-    </button>
-    <div id="gm-chat-panel" role="dialog" aria-modal="false" aria-hidden="true" aria-label="Golden Maple Planning Assistant">
-        <button id="gm-chat-close" aria-label="Close chat">×</button>
-        <div class="gm-chat-header">Golden Maple Planning Assistant</div>
-        <div id="gm-chat-messages" class="gm-chat-messages" aria-live="polite"></div>
-        <div class="gm-chat-input-row">
-            <input id="gm-chat-input" type="text" placeholder="Ask a question..." autocomplete="off" />
-            <button id="gm-chat-send" type="button">Send</button>
-        </div>
-    </div>
-</div>
 </body>
 
 </html>
