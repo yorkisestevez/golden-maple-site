@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Golden Maple Landscaping</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/modern-dark.css">
+    <style>
+        .portfolio-showcase {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 120px;
+            padding-bottom: 120px;
+        }
+
+        .showcase-item {
+            display: grid;
+            grid-template-columns: minmax(0, 540px) minmax(0, 1fr);
+            gap: 56px;
+            align-items: start;
+        }
+
+        .showcase-item:nth-child(even) {
+            direction: rtl;
+        }
+
+        .showcase-item:nth-child(even) .showcase-content,
+        .showcase-item:nth-child(even) .showcase-figure {
+            direction: ltr;
+            text-align: left;
+        }
+
+        .showcase-figure {
+            max-width: 540px;
+        }
+
+        .showcase-img {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            border-radius: 6px;
+            box-shadow: 0 28px 60px rgba(0,0,0,0.28);
+            transition: var(--transition);
+            display: block;
+        }
+
+        .showcase-figure:hover .showcase-img {
+            transform: translateY(-4px);
+        }
+
+        .showcase-caption {
+            margin-top: 18px;
+            padding: 20px 22px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        .showcase-figure:hover .showcase-caption {
+            border-color: rgba(197,160,89,0.35);
+            background: rgba(255,255,255,0.03);
+        }
+
+        .caption-title {
+            font-size: 0.9rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .caption-text {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .showcase-content h2 {
+            font-size: 2.35rem;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            line-height: 1.12;
+        }
+
+        .showcase-content p {
+            font-size: 1.08rem;
+            color: var(--text-secondary);
+            margin-bottom: 28px;
+            line-height: 1.75;
+        }
+
+        .showcase-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            font-size: 0.74rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .showcase-meta span {
+            padding: 10px 14px;
+            border: 1px solid rgba(197,160,89,0.22);
+            border-radius: 999px;
+            background: rgba(197,160,89,0.04);
+        }
+
+        @media (max-width: 992px) {
+            .showcase-item, .showcase-item:nth-child(even) {
+                grid-template-columns: 1fr;
+                direction: ltr;
+                text-align: left;
+                gap: 28px;
+            }
+
+            .showcase-figure {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Golden <span>Maple</span></a>
+            <nav class="desktop-nav">
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="btn-outline">Book a Site Visit</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+        <!-- Refined Hero Section -->
+        <section class="reveal section" style="padding-top: 180px; padding-bottom: 60px; text-align: center;">
+            <div class="container" style="max-width: 800px;">
+                <p class="section-kicker">The Collection</p>
+                <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 24px; line-height: 1.1;">Recent Transformations</h1>
+                <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7;">A curated look at outdoor spaces designed for family living and built to outlast the seasons.</p>
+            </div>
+        </section>
+
+        <!-- Premium Portfolio Showcase -->
+        <section class="reveal section" style="padding-top: 40px;">
+            <div class="container">
+                <div class="portfolio-showcase">
+                    
+                    <!-- Item 1: Porcelain Patio -->
+                    <div class="showcase-item">
+                        <figure class="showcase-figure">
+                            <img src="New website pictures 2026 revised/webp/ABQI9355.webp" alt="Premium waterfront outdoor living space" class="showcase-img">
+                            <figcaption class="showcase-caption">
+                                <div class="caption-title">Built for real hosting</div>
+                                <div class="caption-text">Large-format porcelain over an open-graded base system for clean lines, excellent drainage, and a surface that stays stable through Ontario freeze-thaw cycles.</div>
+                            </figcaption>
+                        </figure>
+                        <div class="showcase-content">
+                            <p class="section-kicker">Outdoor Living</p>
+                            <h2>The Midhurst Terrace</h2>
+                            <p>A calm, polished space designed for dinners outside, family visits, and quiet evenings at home. The finish feels refined, but the structure underneath is what keeps it beautiful year after year.</p>
+                            <div class="showcase-meta">
+                                <span>16" base system</span>
+                                <span>Porcelain finish</span>
+                                <span>Integrated lighting</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Poolscape -->
+                    <div class="showcase-item">
+                        <figure class="showcase-figure">
+                            <img src="New website pictures 2026 revised/webp/pool-deck-ideas.webp" alt="Modern pool deck with glass fencing and loungers" class="showcase-img">
+                            <figcaption class="showcase-caption">
+                                <div class="caption-title">Pool-Grade Hardscape</div>
+                                <div class="caption-text">Clean stonework, integrated drainage, and thermal-stable materials keep the pool edge level and slip-resistant year after year.</div>
+                            </figcaption>
+                        </figure>
+                        <div class="showcase-content">
+                            <p class="section-kicker">Poolside Living</p>
+                            <h2>Springwater Pool Retreat</h2>
+                            <p>An expansive pool surround built for safety and style. Designed to stay level and slip-resistant through heavy use and Ontario freeze-thaw cycles, this area invites summer days without the worry of settling.</p>
+                            <div class="showcase-meta">
+                                <span>Slip-Resistant</span>
+                                <span>Engineered Drainage</span>
+                                <span>Low Maintenance</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: Hardscape / Walkway -->
+                    <div class="showcase-item">
+                        <figure class="showcase-figure">
+                            <img src="New website pictures 2026 revised/webp/Front-entrance-idea-pavers.webp" alt="Clean front entrance interlocking" class="showcase-img">
+                            <figcaption class="showcase-caption">
+                                <div class="caption-title">Engineered Approaches</div>
+                                <div class="caption-text">We focus on the hidden details: geotextiles and precise edge restraints that keep your walkway perfectly straight and weed-free for years.</div>
+                            </figcaption>
+                        </figure>
+                        <div class="showcase-content">
+                            <p class="section-kicker">Curb Appeal</p>
+                            <h2>The Oro-Medonte Approach</h2>
+                            <p>A front entrance that sets the tone for the rest of the home. Built with architectural-grade stone and a deep-engineered base to withstand heavy foot traffic and Canadian winters.</p>
+                            <div class="showcase-meta">
+                                <span>Precision Edging</span>
+                                <span>Multi-Tone Stone</span>
+                                <span>Ontario-Proofed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: Single Premium Decking Shot -->
+                    <div class="showcase-item">
+                        <figure class="showcase-figure">
+                            <img src="New website pictures 2026 revised/webp/luxury decking.webp" alt="Premium composite decking detail" class="showcase-img">
+                            <figcaption class="showcase-caption">
+                                <div class="caption-title">Structural Framing</div>
+                                <div class="caption-text">Below the surface, we use oversized framing and ledger protection to ensure your deck remains rigid and safe for decades.</div>
+                            </figcaption>
+                        </figure>
+                        <div class="showcase-content">
+                            <p class="section-kicker">Custom Decking</p>
+                            <h2>Modern Composite Retreat</h2>
+                            <p>High-performance outdoor living that feels like an extension of your indoor space. Maintenance-free materials meet master-level carpentry for a deck that never needs staining.</p>
+                            <div class="showcase-meta">
+                                <span>Master Carpentry</span>
+                                <span>Zero Maintenance</span>
+                                <span>10-Year Warranty</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="reveal section" style="background: url('New website pictures 2026 revised/webp/JHFJ9446.webp') center/cover no-repeat; position: relative; padding: 140px 0;">
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,9,11,0.95) 0%, rgba(8,9,11,0.7) 100%); z-index: 1;"></div>
+            <div class="container text-center" style="position: relative; z-index: 2;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 24px; line-height: 1.1;">Ready to build something that lasts?</h2>
+                <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 40px; max-width: 500px; margin-left: auto; margin-right: auto;">Book a personal site visit with Yorkis to walk through the possibilities for your home.</p>
+                <a href="contact.html" class="btn-primary" style="display: inline-block; padding: 18px 40px; width: auto;">Book a Site Visit</a>
+            </div>
+        </section>
+    </main>
+
+    
+        <div class="global-trust-bar">
+        <div class="container">
+            <div class="trust-bar-container">
+                <div class="trust-bar-item"><span>5.0 ★★★★★</span> (27+ Verified Google Reviews)</div>
+                <div class="trust-bar-item"><span>WSIB Compliant</span> & $5M Liability Insured</div>
+                <div class="trust-bar-item"><span>10-Year</span> Structural Guarantee</div>
+            </div>
+        </div>
+    </div>
+    <footer class="section section-dark" style="padding: 60px 0; border-top: 1px solid var(--border);">
+        <div class="container text-center">
+            <p>&copy; 2026 Golden Maple Landscaping. Engineered for Canadian Seasons.</p>
+        </div>
+    </footer>
+
+
+    <script src="js/premium-effects.js"></script>
+
+    <div class="trust-seal">
+        <span class="trust-seal-text">
+            <span class="trust-seal-number">10</span> Year<br>Guarantee
+        </span>
+    </div>
+</body>
+</html>
+

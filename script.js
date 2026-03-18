@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const mobileToggleAg = document.querySelector('.mobile-toggle-ag');
   const mobileToggleLegacy = document.querySelector('.mobile-toggle');
-  const mobileMenu = document.querySelector('.mobile-menu-overlay');
+  const mobileMenu = document.querySelector('.mobile-nav-overlay');
   const servicesTrigger = document.getElementById('mobile-services-trigger');
   const servicesWrap = document.querySelector('.mobile-nav-services-wrap');
   const servicesPanel = document.getElementById('mobile-services-panel');
